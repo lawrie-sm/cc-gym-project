@@ -19,11 +19,11 @@ class Event
   end
 
   def members
-    sql '
+    sql = '
       SELECT m.* from members m
       INNER JOIN members_events me
         ON me.member_id = m.id
-      WHERE me._event_id = $1'
+      WHERE me.event_id = $1'
     results = SqlRunner.run(sql, [@id])
     results = results.map { |m| Member.new(m) }
     return results

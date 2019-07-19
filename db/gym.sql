@@ -17,6 +17,6 @@ CREATE TABLE events (
 
 CREATE TABLE members_events (
   ID SERIAL4 PRIMARY KEY,
-  member_id INT4 REFERENCES members (id),
-  event_id INT4 REFERENCES events (id)
+  member_id INT4 REFERENCES members (id) ON DELETE CASCADE,
+  event_id INT4 REFERENCES events (id) ON DELETE CASCADE
 )
