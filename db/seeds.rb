@@ -26,12 +26,14 @@ lifting_class.save
 #
 
 arnold = Member.new(
-  'name' => 'arnold schwarzenegger',
+  'first_name' => 'arnold',
+  'last_name' => 'schwarzenegger',
   'membership' => 'premium'
 )
 arnold.save
 conor = Member.new(
-  'name' => 'conor mcgregor',
+  'first_name' => 'conor mcgregor',
+  'last_name' => 'mcgregor',
   'membership' => 'basic'
 )
 conor.save

@@ -2,10 +2,11 @@ require_relative '../db/sql_runner'
 require_relative 'event'
 
 class Member
-  attr_reader :id, :name, :membership
+  attr_reader :id, :first_name, :last_name, :membership
   def initialize(options)
     @id = options['id'] if options['id']
-    @name = options['name']
+    @first_name = options['first_name']
+    @last_name = options['last_name']
     @membership = options['membership']
   end
 
@@ -22,10 +23,10 @@ class Member
 
   def save
     sql = '
-      INSERT INTO members (name, membership)
-      VALUES ($1, $2)
+      INSERT INTO members (first_name, last_name, membership)
+      VALUES ($1, $2, $3)
       RETURNING id'
-    values = [@name, @membership]
+    values = [@first_name, @last_name, @membership]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 

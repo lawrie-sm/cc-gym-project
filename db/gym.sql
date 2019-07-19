@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS events;
 
 CREATE TABLE members (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
   membership VARCHAR(255) NOT NULL
 );
 
