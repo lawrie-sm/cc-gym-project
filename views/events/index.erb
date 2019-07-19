@@ -1,1 +1,7 @@
-<h2>Events go here</h2>
+<h2>Events</h2>
+
+<% @events.each do |e| %>
+  <p>
+    <%= e.name %> - <%= e.description %> - <%= e.time %>
+  </p>
+<% end %>
