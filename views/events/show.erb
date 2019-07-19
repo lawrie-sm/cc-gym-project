@@ -1,5 +1,5 @@
 <h2><%= @event.name %></h2>
 
 <% @event.members.each do |m| %>
-  <p><%= m.full_name %> - <%= m.membership.capitalize %></p>
+  <p><a href="/members/<%= m.id %>"><%= m.full_name %></a> - <%= m.membership.capitalize %></p>
 <% end %>
