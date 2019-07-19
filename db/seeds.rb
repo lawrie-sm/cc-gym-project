@@ -32,7 +32,7 @@ arnold = Member.new(
 )
 arnold.save
 conor = Member.new(
-  'first_name' => 'conor mcgregor',
+  'first_name' => 'conor',
   'last_name' => 'mcgregor',
   'membership' => 'basic'
 )
