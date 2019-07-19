@@ -5,14 +5,16 @@ class TestMember < MiniTest::Test
   def setup
     @member = Member.new(
       'id' => 1,
-      'name' => 'Test Member',
-      'membership' => 'Basic'
+      'first_name' => 'testy',
+      'last_name' => 'testerton',
+      'membership' => 'basic'
     )
   end
 
-  def test_member_attrs
+  def test_member_attr
     assert_equal(@member.id, 1)
-    assert_equal(@member.name, 'Test Member')
-    assert_equal(@member.membership, 'Basic')
+    assert_equal(@member.first_name, 'testy')
+    assert_equal(@member.last_name, 'testerton')
+    assert_equal(@member.membership, 'basic')
   end
 end
