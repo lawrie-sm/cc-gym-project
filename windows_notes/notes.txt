@@ -1,0 +1,3 @@
+psql -U postgres
+CREATE DATABASE gym;
+psql gym postgres < db/gym.sql
