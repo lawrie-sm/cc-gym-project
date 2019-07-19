@@ -1,5 +1,7 @@
 <h2>Events</h2>
 
+<a href="/events/new">Create a new event</a>
+
 <% @events.each do |e| %>
   <p>
     <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.description %> - <%= e.time %>
