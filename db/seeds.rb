@@ -8,3 +8,5 @@ spin_class = Event.new(
   'time' => spin_class_time
 )
 spin_class.save
+
+p Event.all
