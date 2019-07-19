@@ -44,6 +44,5 @@ spin_class.add_member(arnold)
 lifting_class.add_member(arnold)
 lifting_class.add_member(conor)
 
-p spin_class.members
-p '----'
-p lifting_class.members
+p arnold.events
+p conor.events
