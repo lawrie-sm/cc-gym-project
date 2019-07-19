@@ -1,7 +1,7 @@
-require '../db/sql_runner'
+require_relative '../db/sql_runner'
 
 class Member
-  attr_reader :id, :name
+  attr_reader :id, :name, :membership
   def initialize(options)
     @id = options['id'] if options['id']
     @name = options['name']
