@@ -10,6 +10,10 @@ class Member
     @membership = options['membership']
   end
 
+  def full_name
+    return "#{@first_name} #{@last_name}"
+  end
+
   def events
     sql = '
       SELECT e.* from events e
