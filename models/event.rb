@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner'
+require_relative 'member'
 
 class Event
   attr_reader :id, :name, :description, :time
@@ -15,6 +16,17 @@ class Event
       VALUES ($1, $2)'
     values = [member.id, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def members
+    sql '
+      SELECT m.* from members m
+      INNER JOIN members_events me
+        ON me.member_id = m.id
+      WHERE me._event_id = $1'
+    results = SqlRunner.run(sql, [@id])
+    results = results.map { |m| Member.new(m) }
+    return results
   end
 
   def save
