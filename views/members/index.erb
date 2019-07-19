@@ -1,1 +1,10 @@
-<h2>Members go here</h2>
+<h2>Members</h2>
+
+
+<% @members.each do |m| %>
+<div>
+  <p><%= m.name.capitalize %></p>
+  <p><%= m.membership.capitalize %></p>
+</div>
+
+<% end %>
