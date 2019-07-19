@@ -29,6 +29,12 @@ class Member
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
+  def self.find(id)
+    sql = 'SELECT * from members WHERE id = $1'
+    result = SqlRunner.run(sql, [id])
+    return result.first.nil? ? nil : Member.new(result.first)
+  end
+
   def self.all
     sql = 'SELECT * FROM members'
     results = SqlRunner.run(sql)
