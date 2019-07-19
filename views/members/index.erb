@@ -2,5 +2,5 @@
 
 
 <% @members.each do |m| %>
-  <p><a href="/members/<%= m.id %>"><%= m.full_name %></a> - <%= m.membership.capitalize %></p>
+  <p><a href="/members/<%= m.id %>"><%= m.full_name %></a> - <%= m.membership %></p>
 <% end %>
