@@ -10,6 +10,13 @@ spin_class = Event.new(
   'time' => spin_class_time
 )
 spin_class.save
-Event.delete(spin_class.id)
+
+lifting_class_time = Time.new(2019, 10, 2, 9, 0)
+lifting_class = Event.new(
+  'name' => 'Weightlifting Class',
+  'description' => 'Strength',
+  'time' => lifting_class_time
+)
+lifting_class.save
 
 p Event.all
