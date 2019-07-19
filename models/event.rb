@@ -38,6 +38,12 @@ class Event
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
+  def self.find(id)
+    sql = 'SELECT * from events WHERE id = $1'
+    result = SqlRunner.run(sql, [id])
+    return result.first.nil? ? nil : Event.new(result.first)
+  end
+
   def self.all
     sql = 'SELECT * FROM events'
     results = SqlRunner.run(sql)

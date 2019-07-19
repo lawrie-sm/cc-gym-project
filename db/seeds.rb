@@ -43,6 +43,3 @@ conor.save
 spin_class.add_member(arnold)
 lifting_class.add_member(arnold)
 lifting_class.add_member(conor)
-
-p arnold.events
-p conor.events
