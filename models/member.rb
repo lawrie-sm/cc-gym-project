@@ -10,9 +10,9 @@ class Member
 
   def save
     sql = '
-    INSERT INTO members (name, membership)
-    VALUES ($1, $2)
-    RETURNING id'
+      INSERT INTO members (name, membership)
+      VALUES ($1, $2)
+      RETURNING id'
     values = [@name, @membership]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end

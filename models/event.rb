@@ -9,11 +9,19 @@ class Event
     @time = options['time']
   end
 
+  def add_member(member)
+    sql = '
+      INSERT INTO members_events (member_id, event_id)
+      VALUES ($1, $2)'
+    values = [member.id, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def save
     sql = '
-    INSERT INTO events (name, description, time)
-    VALUES ($1, $2, $3)
-    RETURNING id'
+      INSERT INTO events (name, description, time)
+      VALUES ($1, $2, $3)
+      RETURNING id'
     values = [@name, @description, @time]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
