@@ -1,1 +1,3 @@
-- Dynamically update the navbar based on location (i.e no "home" while on home page)
+- Dynamically update the navbar based on location
+  (i.e no "home" while on home page)
+- Make the linked show views reusable?
