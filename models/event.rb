@@ -24,6 +24,11 @@ class Event
     return results.map { |e| Event.new(e) }
   end
 
+  def self.delete(id)
+    sql = 'DELETE FROM events WHERE id = $1'
+    SqlRunner.run(sql, [id])
+  end
+
   def self.delete_all
     sql = 'DELETE FROM events'
     SqlRunner.run(sql)

@@ -10,5 +10,6 @@ spin_class = Event.new(
   'time' => spin_class_time
 )
 spin_class.save
+Event.delete(spin_class.id)
 
 p Event.all

@@ -1,3 +1,2 @@
-psql -U postgres
-CREATE DATABASE gym;
-psql gym postgres < db/gym.sql
+- Change pg_hba.conf method to trust for local connections
+- Add user to roles in pg admin
