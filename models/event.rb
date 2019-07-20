@@ -1,3 +1,4 @@
+require 'time'
 require_relative '../db/sql_runner'
 require_relative 'member'
 
@@ -8,6 +9,11 @@ class Event
     @name = options['name'].downcase
     @description = options['description']
     @time = options['time']
+    @time = Time.parse(@time) if @time.is_a?(String)
+  end
+
+  def html_time_string
+    return @time.xmlschema[0...-9]
   end
 
   def has_member?(member_id)

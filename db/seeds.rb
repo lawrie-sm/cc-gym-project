@@ -11,14 +11,15 @@ Member.delete_all
 spin_class = Event.new(
   'name' => 'spin class',
   'description' => 'cardio',
-  'time' => Time.new(2019, 10, 1, 12, 30)
+  'time' => Time.new(2020, 10, 1, 12, 30)
 )
 spin_class.save
+spin_class_found = Event.find(spin_class.id)
 
 lifting_class = Event.new(
   'name' => 'weightlifting class',
   'description' => 'strength',
-  'time' => Time.new(2019, 10, 2, 9, 0)
+  'time' => Time.new(2020, 10, 2, 9, 0)
 )
 lifting_class.save
 

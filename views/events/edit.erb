@@ -6,9 +6,9 @@
   <label for="description">Description</label>
   <textarea id="description" name="description" rows="4" cols="40"><%= @event.description %></textarea>
 
-  <p><%= @event.time %></p>
+  <!-- "yyyy-MM-ddThh:mm" -->
   <label for="time">Time</label>
-  <input id="time" type="date" name="time" value="<%= @event.time %>">
+  <input id="time" type="datetime-local" name="time" value="<%= @event.html_time_string %>">
 
   <button type="submit">Update Event</button>
 </form>
