@@ -27,3 +27,7 @@ post '/events/:id/add-member' do
   @event.add_member(@member)
   redirect "/events/#{@event.id}"
 end
+
+post '/events/:id/remove-member' do
+  # Do something
+end

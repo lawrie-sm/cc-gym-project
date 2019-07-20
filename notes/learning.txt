@@ -1,0 +1,5 @@
+- setting up a new dev machine, psql issues, cmder
+
+- thinking about structure, locations/times? Membership tiers
+
+- Submitting forms, where and when (posting to remove/add members)

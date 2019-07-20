@@ -13,5 +13,10 @@
 </form>
 
 <% @event.members.each do |m| %>
-  <p><a href="/members/<%= m.id %>"><%= m.full_name %></a> - <%= m.membership.capitalize %></p>
+  <p>
+    <a href="/members/<%= m.id %>"><%= m.full_name %></a> - <%= m.membership.capitalize %>
+    <form action="/events/<%= @event.id %>/remove-member" method="post">
+      <button type="submit" name="member_id" value="<%= m.id %>">Remove</button>
+    </form>
+  </p>
 <% end %>
