@@ -42,6 +42,6 @@ conor.save
 # Associate members with events
 #
 
-spin_class.add_member(arnold)
-lifting_class.add_member(arnold)
-lifting_class.add_member(conor)
+spin_class.add_member(arnold.id)
+lifting_class.add_member(arnold.id)
+lifting_class.add_member(conor.id)
