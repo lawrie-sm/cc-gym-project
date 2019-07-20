@@ -5,7 +5,7 @@ class Event
   attr_reader :id, :name, :description, :time
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @name = options['name'].downcase
     @description = options['description']
     @time = options['time']
   end
@@ -49,6 +49,15 @@ class Event
       RETURNING id'
     values = [@name, @description, @time]
     @id = SqlRunner.run(sql, values).first['id'].to_i
+  end
+
+  def update
+    sql = '
+      UPDATE events
+      SET (name, description, time) =
+      ($1, $2, $3) WHERE id = $4'
+    values = [@name, @description, @time, @id]
+    SqlRunner.run(sql, values)
   end
 
   def self.find(id)

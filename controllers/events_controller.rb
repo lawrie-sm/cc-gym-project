@@ -7,7 +7,13 @@ get '/events' do
 end
 
 get '/events/new' do
+  @events = Event.all
   erb(:'events/new')
+end
+
+get '/events/:id/edit' do
+  @event = Event.find(params['id'])
+  erb(:'events/edit')
 end
 
 post '/events' do

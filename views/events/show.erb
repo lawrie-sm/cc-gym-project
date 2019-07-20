@@ -1,5 +1,7 @@
 <h2><%= @event.name %></h2>
 
+<a href="/events/<%= @event.id %>/edit">Edit event</a>
+
 <p><%= @event.description %></p>
 
 <% unless @absent_members.count.zero? %>

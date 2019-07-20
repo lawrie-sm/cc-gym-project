@@ -1,0 +1,13 @@
+<h2>Edit <%= @event.name %></h2>
+
+  <label for="name">Name</label>
+  <input id="Name" type="text" name="name" value="<%= @event.name %>">
+
+  <label for="description">Description</label>
+  <textarea id="description" name="description" rows="4" cols="40"><%= @event.description %></textarea>
+
+  <label for="time">Time</label>
+  <input id="time" type="date" name="time" value="<%= @event.time %>">
+
+  <button type="submit">Update Event</button>
+</form>
