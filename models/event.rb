@@ -18,7 +18,7 @@ class Event
     SqlRunner.run(sql, values)
   end
 
-  def remove_member(member)
+  def remove_member(member_id)
     sql = '
       DELETE FROM members_events
       WHERE member_id = $1 AND event_id = $2'

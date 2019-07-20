@@ -23,14 +23,12 @@ end
 
 post '/events/:id/add-member' do
   @event = Event.find(params['id'])
-  @member = Member.find(params['member_id'])
-  @event.add_member(@member)
+  @event.add_member(params['member_id'])
   redirect "/events/#{@event.id}"
 end
 
 post '/events/:id/remove-member' do
   @event = Event.find(params['id'])
-  @member = Member.find(params['member_id'])
-  @event.remove_member(@member)
+  @event.remove_member(params['member_id'])
   redirect "/events/#{@event.id}"
 end
