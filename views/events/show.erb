@@ -5,7 +5,7 @@
 <form action="/events/<%= @event.id %>/add-member" method="post">
   <label for="members">Members</label>
   <select id="members" name="member_id">
-    <% @all_members.each do |m| %>
+    <% @absent_members.each do |m| %>
       <option value="<%= m.id %>"><%= m.full_name %></option>
     <% end %>
   </select>

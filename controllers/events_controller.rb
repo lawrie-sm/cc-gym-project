@@ -17,7 +17,9 @@ end
 
 get '/events/:id' do
   @event = Event.find(params['id'])
-  @all_members = Member.all
+  @absent_members = Member.all.map do |m|
+    m.id
+  end
   erb(:'events/show')
 end
 

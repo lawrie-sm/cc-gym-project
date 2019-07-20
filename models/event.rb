@@ -11,7 +11,7 @@ class Event
   end
 
   def has_member?(member_id)
-    current_ids = members.map {|m| m.id.to_i }
+    current_ids = members.map { |m| m.id.to_i }
     return current_ids.include?(member_id)
   end
 
