@@ -1,17 +1,19 @@
 - setting up a new dev machine, psql issues, cmder
 
-- thinking about structure, locations/times? Membership tiers
+- Dealing with time between Ruby, PSQL and HTML had some issues. No need to do lots of string parsing
+but needed to require 'time' in the model and parse it when coming back from DB as a string.
+In order to set the default time in the update function, needed to do some string mangling with xmlschme
+in html_time_string
+
+- thinking about structure, locations/times? Membership tiers. Could go on for ages adding things
 
 - Submitting forms, where and when (posting to remove/add members)
  Removing member from event requires using a single "POST" button,
  is this correct?
 
+ - Not really possible to dynamically create forms without JS
+
 - testing functions that rely on other DB functions
 
 - using "Reject" and "Select" instead of map, to
 create the event show dropdown of absent members
-
-- Dealing with time between Ruby, PSQL and HTML had some issues. No need to do lots of string parsing
-but needed to require 'time' in the model and parse it when coming back from DB as a string.
-In order to set the default time in the update function, needed to do some string mangling with xmlschme
-in html_time_string
