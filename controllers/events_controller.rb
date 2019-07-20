@@ -29,5 +29,8 @@ post '/events/:id/add-member' do
 end
 
 post '/events/:id/remove-member' do
-  # Do something
+  @event = Event.find(params['id'])
+  @member = Member.find(params['member_id'])
+  @event.remove_member(@member)
+  redirect "/events/#{@event.id}"
 end

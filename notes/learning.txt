@@ -3,3 +3,5 @@
 - thinking about structure, locations/times? Membership tiers
 
 - Submitting forms, where and when (posting to remove/add members)
+ Removing member from event requires using a single "POST" button,
+ is this correct?

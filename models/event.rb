@@ -10,11 +10,19 @@ class Event
     @time = options['time']
   end
 
-  def add_member(member)
+  def add_member(member_id)
     sql = '
       INSERT INTO members_events (member_id, event_id)
       VALUES ($1, $2)'
-    values = [member.id, @id]
+    values = [member_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def remove_member(member)
+    sql = '
+      DELETE FROM members_events
+      WHERE member_id = $1 AND event_id = $2'
+    values = [member_id, @id]
     SqlRunner.run(sql, values)
   end
 
