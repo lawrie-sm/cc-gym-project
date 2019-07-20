@@ -7,3 +7,6 @@
  is this correct?
 
 - testing functions that rely on other DB functions
+
+- using "Reject" and "Select" instead of map, to
+create the event show dropdown of absent members
