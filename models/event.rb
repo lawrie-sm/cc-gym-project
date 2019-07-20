@@ -10,6 +10,11 @@ class Event
     @time = options['time']
   end
 
+  def has_member?(member_id)
+    current_ids = members.map {|m| m.id.to_i }
+    return current_ids.include?(member_id)
+  end
+
   def add_member(member_id)
     sql = '
       INSERT INTO members_events (member_id, event_id)
