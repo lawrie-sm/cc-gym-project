@@ -14,6 +14,7 @@ spin_class = Event.new(
   'time' => Time.new(2019, 10, 1, 12, 30)
 )
 spin_class.save
+
 lifting_class = Event.new(
   'name' => 'weightlifting class',
   'description' => 'strength',

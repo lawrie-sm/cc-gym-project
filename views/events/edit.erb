@@ -6,6 +6,7 @@
   <label for="description">Description</label>
   <textarea id="description" name="description" rows="4" cols="40"><%= @event.description %></textarea>
 
+  <p><%= @event.time %></p>
   <label for="time">Time</label>
   <input id="time" type="date" name="time" value="<%= @event.time %>">
 
