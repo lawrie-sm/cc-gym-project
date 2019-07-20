@@ -1,5 +1,17 @@
 <h2><%= @event.name %></h2>
 
+<p><%= @event.description %></p>
+<h2>Add member</h2>
+<form action="/events/<%= @event.id %>/add-member" method="post">
+  <label for="members">Members</label>
+  <select id="members" name="member_id">
+    <% @all_members.each do |m| %>
+      <option value="<%= m.id %>"><%= m.full_name %></option>
+    <% end %>
+  </select>
+  <button type="submit">Add Member</button>
+</form>
+
 <% @event.members.each do |m| %>
   <p><a href="/members/<%= m.id %>"><%= m.full_name %></a> - <%= m.membership.capitalize %></p>
 <% end %>

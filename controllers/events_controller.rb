@@ -17,5 +17,13 @@ end
 
 get '/events/:id' do
   @event = Event.find(params['id'])
+  @all_members = Member.all
   erb(:'events/show')
+end
+
+post '/events/:id/add-member' do
+  @event = Event.find(params['id'])
+  @member = Member.find(params['member_id'])
+  @event.add_member(@member)
+  redirect "/events/#{@event.id}"
 end
