@@ -10,6 +10,12 @@ Location.delete_all
 # Seed locations
 #
 
+room_a = Location.new(
+  'name' => 'room a',
+  'capacity' => 5
+)
+room_a.save
+
 weights_room = Location.new(
   'name' => 'weights room',
   'capacity' => 3
@@ -40,7 +46,7 @@ yoga_class = Event.new(
   'description' => 'chakras',
   'start_time' => Time.new(2019, 7, 30, 12, 45),
   'end_time' => Time.new(2019, 7, 30, 13, 45),
-  'location_id' => spin_room.id
+  'location_id' => room_a.id
 )
 yoga_class.save
 

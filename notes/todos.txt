@@ -1,10 +1,9 @@
-- Add required to attributes
-- Make sure start time is before end time
-- Prevent two events at the same location at the same time
-- Prevent customers from being added to multiple events at the same time
 - Add recurring events
 - Add a calender view with upcoming events
 - add pics/logos for events/locaitons/members/membership tiers/users
 - Use CSS text-transform to capitalise words
 - Dynamically update the navbar based on location
   (i.e no "home" while on home page)
+
+  - Prevent two events at the same location at the same time?
+  - Prevent customers from being added to multiple events at the same time?

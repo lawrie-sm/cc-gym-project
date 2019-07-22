@@ -77,6 +77,12 @@ class Event
     SqlRunner.run(sql, values)
   end
 
+  def addable_members
+    return Member.all.reject do |m|
+      has_member?(m.id) || (m.membership == 'basic' && peak?)
+    end
+  end
+
   def members
     sql = '
       SELECT m.* from members m

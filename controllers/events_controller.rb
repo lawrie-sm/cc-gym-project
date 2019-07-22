@@ -25,17 +25,6 @@ end
 # Show individual event
 get '/events/:id' do
   @event = Event.find(params['id'])
-
-  # Build a list for the 'add member' dropdown
-  @addable_members = Member.all.reject do |m|
-    reject = false
-    # Reject members who are already attending
-    reject = true if @event.has_member?(m.id)
-    # Reject basic members for peak events
-    reject = true if m.membership == 'basic' && @event.peak?
-    reject
-  end
-
   erb(:'events/show')
 end
 
@@ -60,7 +49,6 @@ post '/events/:id/add-member' do
   @event.add_member(@member)
   redirect "/events/#{@event.id}"
 end
-
 
 # Post to remove member from event
 post '/events/:id/remove-member' do
