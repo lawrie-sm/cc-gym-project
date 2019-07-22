@@ -3,13 +3,14 @@ require_relative '../db/sql_runner'
 require_relative 'member'
 
 class Event
-  attr_reader :id, :name, :description, :time
+  attr_reader :id, :name, :description, :time, :location_id
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name'].downcase
     @description = options['description']
     @time = options['time']
     @time = Time.parse(@time) if @time.is_a?(String)
+    @location_id = options['location_id']
   end
 
   def html_time_string
@@ -50,19 +51,19 @@ class Event
 
   def save
     sql = '
-      INSERT INTO events (name, description, time)
-      VALUES ($1, $2, $3)
+      INSERT INTO events (name, description, time, location_id)
+      VALUES ($1, $2, $3, $4)
       RETURNING id'
-    values = [@name, @description, @time]
+    values = [@name, @description, @time, @location_id]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
   def update
     sql = '
       UPDATE events
-      SET (name, description, time) =
-      ($1, $2, $3) WHERE id = $4'
-    values = [@name, @description, @time, @id]
+      SET (name, description, time, location_id) =
+      ($1, $2, $3, £4) WHERE id = $5'
+    values = [@name, @description, @time, @location_id, @id]
     SqlRunner.run(sql, values)
   end
 
