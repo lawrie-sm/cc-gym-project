@@ -1,5 +1,6 @@
 require 'time'
 require_relative '../db/sql_runner'
+require_relative 'location'
 require_relative 'member'
 
 class Event
@@ -15,6 +16,10 @@ class Event
 
   def html_time_string
     return @time.xmlschema[0...-9]
+  end
+
+  def location
+    return Location.find(@location_id)
   end
 
   def has_member?(member_id)
