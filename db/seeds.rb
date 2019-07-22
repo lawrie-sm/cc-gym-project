@@ -4,6 +4,7 @@ require_relative '../models/member'
 
 Event.delete_all
 Member.delete_all
+Location.delete_all
 
 #
 # Seed locations

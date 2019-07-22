@@ -1,0 +1,9 @@
+<h2>Locations</h2>
+
+<a href="/locations/new">Create a new location</a>
+
+<% @locations.each do |l| %>
+  <p>
+    <%= l.name %> - Capacity: <%= l.capacity %>
+  </p>
+<% end %>
