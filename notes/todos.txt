@@ -1,4 +1,4 @@
-- Add recurring events
+- Replace edit with cogwheel
 - Add a calender view with upcoming events
 - add pics/logos for events/locaitons/members/membership tiers/users
 - Use CSS text-transform to capitalise words

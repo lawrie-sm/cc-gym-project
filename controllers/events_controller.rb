@@ -67,3 +67,9 @@ post '/events/:id/delete' do
   Event.delete(params['id'])
   redirect '/events'
 end
+
+# Post to delete event
+post '/events/:name/delete-all' do
+  Event.delete_all_in_series(params['name'])
+  redirect '/events'
+end

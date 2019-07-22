@@ -15,3 +15,7 @@
 
   <button type="submit">Update Member</button>
 </form>
+
+<form action="/members/<%= @member.id %>/delete" method="post">
+  <button type="submit" name="id" value="<%= @member.id %>">Delete member</button>
+</form>

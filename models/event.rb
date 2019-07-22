@@ -135,4 +135,11 @@ class Event
     sql = 'DELETE FROM events'
     SqlRunner.run(sql)
   end
+
+  def self.delete_all_in_series(name)
+    sql = '
+      DELETE FROM events
+      WHERE name = $1'
+    SqlRunner.run(sql, [name])
+  end
 end

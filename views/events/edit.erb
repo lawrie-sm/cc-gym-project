@@ -25,3 +25,11 @@
 
   <button type="submit">Update Event</button>
 </form>
+
+<form action="/events/<%= @event.id %>/delete" method="post">
+  <button type="submit" name="id" value="<%= @event.id %>">Delete event</button>
+</form>
+
+<form action="/events/<%= @event.name %>/delete-all" method="post">
+  <button type="submit" name="id" value="<%= @event.id %>">Delete all events in series</button>
+</form>

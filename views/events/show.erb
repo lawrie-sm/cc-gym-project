@@ -2,10 +2,6 @@
 
 <a href="/events/<%= @event.id %>/edit">Edit event</a>
 
-<form action="/events/<%= @event.id %>/delete" method="post">
-  <button type="submit" name="id" value="<%= @event.id %>">Delete event</button>
-</form>
-
 <p><%= @event.location.name %></p>
 <p><%= @event.print_time %></p>
 <p><%= @event.description %></p>

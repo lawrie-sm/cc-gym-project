@@ -4,10 +4,6 @@
 
 <a href="/locations/<%= @location.id %>/edit">Edit</a>
 
-<form action="/locations/<%= @location.id %>/delete" method="post">
-  <button type="submit" name="id" value="<%= @location.id %>">Delete</button>
-</form>
-
 <p>The following events are taking place at this location:</p>
 <% @location.events.each do |e| %>
   <p>

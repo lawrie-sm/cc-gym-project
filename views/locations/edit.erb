@@ -9,3 +9,7 @@
 
   <button type="submit">Update Location</button>
 </form>
+
+<form action="/locations/<%= @location.id %>/delete" method="post">
+  <button type="submit" name="id" value="<%= @location.id %>">Delete</button>
+</form>
