@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
   font-size: 100%;
+  line-height: 1.5em;
   color: #211A1E;
   margin: 0;
   padding: 0;
@@ -22,13 +23,31 @@ html {
 h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
   color: #ed6a5e;
-  margin: 1em 0;
+}
+
+h1 {
+  font-size: 200%;
+}
+
+h2 {
+  font-size: 150%;
+}
+
+h3 {
+  font-size: 125%;
 }
 
 a {
   text-transform: capitalize;
   text-decoration: none;
   color: #377771;
+}
+
+hr {
+  color: #377771;
+  margin: 15px auto;
+  border-top: 1px;
+  border-style: solid;
 }
 
 /* Nav bar */

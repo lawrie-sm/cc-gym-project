@@ -24,8 +24,12 @@ class TestEvent < MiniTest::Test
     assert_equal(@event.location_id, 10)
   end
 
+  def test_print_date
+    assert_equal(@event.print_date, 'Jan 26')
+  end
+
   def test_print_time
-    assert_equal(@event.print_time, 'Jan 26 13:00-14:15')
+    assert_equal(@event.print_time, '13:00-14:15')
   end
 
   def test_duration

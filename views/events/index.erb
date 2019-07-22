@@ -1,9 +1,24 @@
 <h2>Events</h2>
 
-<a href="/events/new">Create a new event</a>
+<a href="/events/new">+ New event</a>
 
-<% @events.each do |e| %>
-  <p>
-    <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.location.name %> - <%= e.print_time %>
-  </p>
-<% end %>
+
+
+<table>
+  <th>Event</th>
+  <th>Location</th>
+  <th>Date</th>
+  <th>Time</th>
+
+  <% @events.each do |e| %>
+    <tr>
+      <a href="/events/<%= e.id %>"><%= e.name %></a>
+    </tr>
+    <tr>
+      <%= e.location.name %>
+    </tr>
+    <tr>
+
+    </tr>
+  <% end %>
+</table>
