@@ -30,3 +30,9 @@ post '/locations/:id' do
   location.update
   redirect '/locations'
 end
+
+# Post to delete location
+post '/locations/:id/delete' do
+  Location.delete(params['id'])
+  redirect '/locations'
+end

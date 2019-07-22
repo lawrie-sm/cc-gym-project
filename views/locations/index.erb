@@ -7,4 +7,7 @@
     <%= l.name %> - Capacity: <%= l.capacity %>
   </p>
   <a href="/locations/<%= l.id %>/edit">Edit</a>
+  <form action="/locations/<%= l.id %>/delete" method="post">
+    <button type="submit" name="id" value="<%= l.id %>">Delete</button>
+  </form>
 <% end %>
