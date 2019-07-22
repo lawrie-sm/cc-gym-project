@@ -55,3 +55,9 @@ post '/events/:id/remove-member' do
   @event.remove_member(params['member_id'])
   redirect "/events/#{@event.id}"
 end
+
+# Post to delete event
+post '/events/:id/delete' do
+  Event.delete(params['id'])
+  redirect '/events'
+end
