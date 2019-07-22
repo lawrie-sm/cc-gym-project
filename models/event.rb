@@ -27,6 +27,19 @@ class Event
     return members.count < location.capacity
   end
 
+  def peak?
+    t = @time
+    peak_lunch = Range.new(
+      Time.new(t.year, t.month, t.day, 12),
+      Time.new(t.year, t.month, t.day, 14)
+    )
+    peak_afternoon = Range.new(
+      Time.new(t.year, t.month, t.day, 17),
+      Time.new(t.year, t.month, t.day, 19)
+    )
+    return peak_lunch.include?(t) || peak_afternoon.include?(t)
+  end
+
   def location
     return Location.find(@location_id)
   end

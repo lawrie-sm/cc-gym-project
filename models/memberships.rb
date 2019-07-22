@@ -1,4 +1,4 @@
-class Membership
+class Tiers
   def self.tiers
     return {
       'premium': 'all_times'

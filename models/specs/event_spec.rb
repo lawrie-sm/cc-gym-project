@@ -3,7 +3,7 @@ require_relative '../event'
 
 class TestEvent < MiniTest::Test
   def setup
-    @time = Time.new(1991, 1, 26, 9, 0)
+    @time = Time.new(1991, 1, 26, 13, 0)
     @event = Event.new(
       'id' => 1,
       'name' => 'test event',
@@ -22,6 +22,22 @@ class TestEvent < MiniTest::Test
   end
 
   def test_html_time_string
-    assert_equal(@event.html_time_string, '1991-01-26T09:00')
+    assert_equal(@event.html_time_string, '1991-01-26T13:00')
+  end
+
+  def test_peak__true
+    assert(@event.peak?)
+  end
+
+  def test_peak__false
+    @off_peak_time = Time.new(1991, 1, 26, 22, 0)
+    @off_peak_event = Event.new(
+      'id' => 2,
+      'name' => 'test off peak event',
+      'description' => 'off peak',
+      'time' => @off_peak_time,
+      'location_id' => 20
+    )
+    refute(@off_peak_event.peak?)
   end
 end
