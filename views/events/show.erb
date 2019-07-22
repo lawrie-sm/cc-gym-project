@@ -10,8 +10,6 @@
 <p><%= @event.time %></p>
 <p><%= @event.description %></p>
 
-
-
 <% if @addable_members.count.zero? %>
   <p>All eligible members are attending this event</p>
 <% elsif !@event.has_capacity? %>

@@ -5,18 +5,20 @@ require_relative 'member'
 require_relative 'peak_times'
 
 class Event
-  attr_reader :id, :name, :description, :time, :location_id
+  attr_reader :id, :name, :description, :start_time, :end_time, :location_id
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name'].downcase
     @description = options['description']
-    @time = options['time']
-    @time = Time.parse(@time) if @time.is_a?(String)
+    @start_time = options['start_time']
+    @start_time = Time.parse(@start_time) if @start_time.is_a?(String)
+    @end_time = options['end_time']
+    @end_time = Time.parse(@end_time) if @end_time.is_a?(String)
     @location_id = options['location_id']
   end
 
   def html_time_string
-    return @time.xmlschema[0...-9]
+    return @start_time.xmlschema[0...-9]
   end
 
   def has_member?(member_id)
@@ -29,7 +31,7 @@ class Event
   end
 
   def peak?
-    return PeakTimes.within_peak_times?(@time)
+    return PeakTimes.within_peak_times?(@start_time)
   end
 
   def location
@@ -69,19 +71,19 @@ class Event
 
   def save
     sql = '
-      INSERT INTO events (name, description, time, location_id)
-      VALUES ($1, $2, $3, $4)
+      INSERT INTO events (name, description, start_time, end_time, location_id)
+      VALUES ($1, $2, $3, $4, $5)
       RETURNING id'
-    values = [@name, @description, @time, @location_id]
+    values = [@name, @description, @start_time, @end_time, @location_id]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
   def update
     sql = '
       UPDATE events
-      SET (name, description, time, location_id) =
-      ($1, $2, $3, $4) WHERE id = $5'
-    values = [@name, @description, @time, @location_id, @id]
+      SET (name, description, start_time, end_time, location_id) =
+      ($1, $2, $3, $4, $5) WHERE id = $6'
+    values = [@name, @description, @start_time, @end_time, @location_id, @id]
     SqlRunner.run(sql, values)
   end
 

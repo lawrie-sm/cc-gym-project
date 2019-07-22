@@ -29,15 +29,26 @@ spin_room.save
 spin_class = Event.new(
   'name' => 'spin class',
   'description' => 'cardio',
-  'time' => Time.new(2020, 10, 1, 12, 30),
+  'start_time' => Time.new(2019, 7, 30, 12, 30),
+  'end_time' => Time.new(2019, 7, 30, 13, 30),
   'location_id' => spin_room.id
 )
 spin_class.save
 
+yoga_class = Event.new(
+  'name' => 'yoga class',
+  'description' => 'chakras',
+  'start_time' => Time.new(2019, 7, 30, 12, 45),
+  'end_time' => Time.new(2019, 7, 30, 13, 45),
+  'location_id' => spin_room.id
+)
+yoga_class.save
+
 lifting_class = Event.new(
   'name' => 'weightlifting class',
   'description' => 'strength',
-  'time' => Time.new(2020, 10, 2, 9, 0),
+  'start_time' => Time.new(2019, 7, 31, 9, 0),
+  'end_time' => Time.new(2019, 7, 31, 10, 0),
   'location_id' => weights_room.id
 )
 lifting_class.save
