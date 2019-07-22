@@ -10,7 +10,7 @@
 <p><%= @event.time %></p>
 <p><%= @event.description %></p>
 
-<h2>Members</h2>
+
 
 <% if @absent_members.count.zero? %>
   <p>All members are attending this event</p>
@@ -30,6 +30,7 @@
   </form>
 <% end %>
 
+<h3>Members attending</h3>
 <% @event.members.each do |m| %>
   <p>
     <a href="/members/<%= m.id %>"><%= m.full_name %></a> - <%= m.membership.capitalize %>

@@ -8,7 +8,8 @@ class TestEvent < MiniTest::Test
       'id' => 1,
       'name' => 'test event',
       'description' => 'A test event',
-      'time' => @time
+      'time' => @time,
+      'location_id' => 10
     )
   end
 
@@ -17,6 +18,7 @@ class TestEvent < MiniTest::Test
     assert_equal(@event.name, 'test event')
     assert_equal(@event.description, 'A test event')
     assert_equal(@event.time, @time)
+    assert_equal(@event.location_id, 10)
   end
 
   def test_html_time_string

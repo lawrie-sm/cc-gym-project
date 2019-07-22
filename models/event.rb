@@ -18,10 +18,6 @@ class Event
     return @time.xmlschema[0...-9]
   end
 
-  def location
-    return Location.find(@location_id)
-  end
-
   def has_member?(member_id)
     current_ids = members.map { |m| m.id.to_i }
     return current_ids.include?(member_id)
@@ -29,6 +25,10 @@ class Event
 
   def has_capacity?
     return members.count < location.capacity
+  end
+
+  def location
+    return Location.find(@location_id)
   end
 
   def add_member(member_id)
