@@ -10,7 +10,7 @@
   <label for="membership">Membership</label>
   <select id="membership" name="membership" required>
     <option <%= @member.membership == "basic" ? "selected" : "" %> value="basic">Basic</option>
-    <option <%= @member.membership == "premium" ? "selected" : "" %> value="basic">Premium</option>
+    <option <%= @member.membership == "premium" ? "selected" : "" %> value="premium">Premium</option>
   </select>
 
   <button type="submit">Update Member</button>
