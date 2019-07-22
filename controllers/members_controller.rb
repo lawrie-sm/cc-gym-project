@@ -17,6 +17,12 @@ get '/members/:id/edit' do
   erb(:'/members/edit')
 end
 
+# Show individual member
+get '/members/:id' do
+  @member = Member.find(params['id'])
+  erb(:'members/show')
+end
+
 # Create new member
 post '/members' do
   member = Member.new(params)
@@ -24,8 +30,9 @@ post '/members' do
   redirect "/members/#{member.id}"
 end
 
-# Show member
-get '/members/:id' do
-  @member = Member.find(params['id'])
-  erb(:'members/show')
+# Post to update member
+post '/members/:id' do
+  member = Member.new(params)
+  member.update
+  redirect "/members/#{member.id}"
 end

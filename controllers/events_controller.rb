@@ -37,9 +37,9 @@ end
 
 # Post updated event
 post '/events/:id' do
-  @event = Event.new(params)
-  @event.update
-  redirect "/events/#{@event.id}"
+  event = Event.new(params)
+  event.update
+  redirect "/events/#{event.id}"
 end
 
 # Post new member to event
