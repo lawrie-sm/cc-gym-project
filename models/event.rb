@@ -2,6 +2,7 @@ require 'time'
 require_relative '../db/sql_runner'
 require_relative 'location'
 require_relative 'member'
+require_relative 'peak_times'
 
 class Event
   attr_reader :id, :name, :description, :time, :location_id
@@ -28,16 +29,7 @@ class Event
   end
 
   def peak?
-    t = @time
-    peak_lunch = Range.new(
-      Time.new(t.year, t.month, t.day, 12),
-      Time.new(t.year, t.month, t.day, 14)
-    )
-    peak_afternoon = Range.new(
-      Time.new(t.year, t.month, t.day, 17),
-      Time.new(t.year, t.month, t.day, 19)
-    )
-    return peak_lunch.include?(t) || peak_afternoon.include?(t)
+    return PeakTimes.within_peak_times?(@time)
   end
 
   def location
