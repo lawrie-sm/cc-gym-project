@@ -1,3 +1,46 @@
-body {
+/* CSS Reset */
+
+* {
+  box-sizing: border-box;
   font-family: sans-serif;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* Nav bar */
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  list-style-type: none;
+  background-color: blue;
+}
+
+nav li {
+  padding: 20px 25px;
+  display: inline;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a .active {
+  text-decoration: underline;
+}
+
+/* Main container */
+
+main {
+  width: 500px;
+  margin: 50px auto;
 }
