@@ -1,0 +1,17 @@
+<h2>Edit member</h2>
+
+<form action="/members" method="post">
+  <label for="first-name">First name</label>
+  <input id="first-name" type="text" name="first_name">
+
+  <label for="last-name">Last name</label>
+  <input type="text" name="last_name">
+
+  <label for="membership">Membership</label>
+  <select id="membership" name="membership">
+    <option value="basic">Basic</option>
+    <option value="basic">Premium</option>
+  </select>
+
+  <button type="submit">Update Member</button>
+</form>

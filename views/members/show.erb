@@ -1,5 +1,9 @@
 <h2><%= @member.full_name %></h2>
 
+<a href="/members/<%= @member.id %>/edit">Edit member</a>
+
+
+<h3>Events</h3>
 <% @member.events.each do |e| %>
 <p>
   <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.description %> - <%= e.time %>

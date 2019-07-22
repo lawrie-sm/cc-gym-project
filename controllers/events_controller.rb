@@ -7,23 +7,16 @@ get '/events' do
   erb(:'events/index')
 end
 
-# Create form
+# Create event form
 get '/events/new' do
   @events = Event.all
   erb(:'events/new')
 end
 
-# Update form
+# Edit event form
 get '/events/:id/edit' do
   @event = Event.find(params['id'])
   erb(:'events/edit')
-end
-
-# New
-post '/events' do
-  event = Event.new(params)
-  event.save
-  redirect "/events/#{event.id}"
 end
 
 # Show individual event
@@ -35,21 +28,28 @@ get '/events/:id' do
   erb(:'events/show')
 end
 
-# Update
+# Post new event
+post '/events' do
+  event = Event.new(params)
+  event.save
+  redirect "/events/#{event.id}"
+end
+
+# Post updated event
 post '/events/:id' do
   @event = Event.new(params)
   @event.update
   redirect "/events/#{@event.id}"
 end
 
-# Add member
+# Post new member to event
 post '/events/:id/add-member' do
   @event = Event.find(params['id'])
   @event.add_member(params['member_id'])
   redirect "/events/#{@event.id}"
 end
 
-# Remove member
+# Post to remove member from event
 post '/events/:id/remove-member' do
   @event = Event.find(params['id'])
   @event.remove_member(params['member_id'])
