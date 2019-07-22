@@ -19,7 +19,8 @@ class Member
       SELECT e.* from events e
       INNER JOIN members_events me
         ON me.event_id = e.id
-      WHERE me.member_id = $1'
+      WHERE me.member_id = $1
+      ORDER BY e.start_time ASC'
     results = SqlRunner.run(sql, [@id])
     results = results.map { |m| Event.new(m) }
     return results

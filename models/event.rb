@@ -88,7 +88,10 @@ class Event
       SELECT m.* from members m
       INNER JOIN members_events me
         ON me.member_id = m.id
-      WHERE me.event_id = $1'
+      WHERE me.event_id = $1
+      ORDER BY
+        membership DESC,
+        first_name ASC'
     results = SqlRunner.run(sql, [@id])
     results = results.map { |m| Member.new(m) }
     return results
@@ -121,7 +124,7 @@ class Event
   def self.all
     sql = '
       SELECT * FROM events
-      ORDER BY events.start_time'
+      ORDER BY events.start_time ASC'
     results = SqlRunner.run(sql)
     return results.map { |e| Event.new(e) }
   end

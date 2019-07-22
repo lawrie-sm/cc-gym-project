@@ -11,7 +11,8 @@ class Location
   def events
     sql = '
       SELECT e.* from events e
-      WHERE e.location_id = $1'
+      WHERE e.location_id = $1
+      ORDER BY e.start_time ASC'
     results = SqlRunner.run(sql, [@id])
     results = results.map { |e| Event.new(e) }
     return results
