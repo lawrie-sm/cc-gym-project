@@ -36,3 +36,9 @@ post '/members/:id' do
   member.update
   redirect "/members/#{member.id}"
 end
+
+# Post to delete member
+post '/members/:id/delete' do
+  Member.delete(params['id'])
+  redirect "/members"
+end

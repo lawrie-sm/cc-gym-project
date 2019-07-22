@@ -2,8 +2,11 @@
 
 <a href="/members/<%= @member.id %>/edit">Edit member</a>
 
+<form action="/members/<%= @member.id %>/delete" method="post">
+  <button type="submit" name="id" value="<%= @member.id %>">Delete member</button>
+</form>
 
-<h3>Events</h3>
+<p>This member is attending the following events:</p>
 <% @member.events.each do |e| %>
 <p>
   <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.description %> - <%= e.time %>
