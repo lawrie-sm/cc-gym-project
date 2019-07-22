@@ -4,6 +4,6 @@
 
 <% @events.each do |e| %>
   <p>
-    <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.location.name %> - <%= e.time %>
+    <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.location.name %> - <%= e.print_time %>
   </p>
 <% end %>

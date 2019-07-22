@@ -28,6 +28,10 @@ class TestEvent < MiniTest::Test
     assert_equal(@event.html_time_string, '1991-01-26T13:00')
   end
 
+  def test_print_time
+    assert_equal(@event.print_time, "#{@event.start_time} - #{@event.end_time}")
+  end
+
   def test_peak__true
     assert(@event.peak?)
   end

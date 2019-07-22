@@ -21,6 +21,10 @@ class Event
     return @start_time.xmlschema[0...-9]
   end
 
+  def print_time
+    return "#{@start_time} - #{@end_time}"
+  end
+
   def has_member?(member_id)
     current_ids = members.map { |m| m.id.to_i }
     return current_ids.include?(member_id)

@@ -11,6 +11,6 @@
 <p>The following events are taking place at this location:</p>
 <% @location.events.each do |e| %>
   <p>
-    <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.description %> - <%= e.time %>
+    <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.description %> - <%= e.print_time %>
   </p>
 <% end %>
