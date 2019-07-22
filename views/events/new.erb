@@ -7,6 +7,13 @@
   <label for="description">Description</label>
   <textarea id="description" name="description" rows="4" cols="40"></textarea>
 
+  <label for="location">Location</label>
+  <select id="location" name="location_id">
+    <% @locations.each do |l| %>
+       <option value="<%= l.id %>"><%= l.name %> - <%= l.capacity %></option>
+    <% end %>
+  </select>
+
   <label for="time">Time</label>
   <input id="time" type="datetime-local" name="time">
 

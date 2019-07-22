@@ -6,9 +6,11 @@
   <button type="submit" name="id" value="<%= @event.id %>">Delete event</button>
 </form>
 
-
-
+<p><%= @event.location.name %></p>
+<p><%= @event.time %></p>
 <p><%= @event.description %></p>
+
+<h2>Members</h2>
 
 <% unless @absent_members.count.zero? %>
   <h3>Add member</h3>

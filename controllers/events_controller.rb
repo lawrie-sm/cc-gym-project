@@ -1,4 +1,6 @@
 require_relative '../models/event'
+require_relative '../models/member'
+require_relative '../models/location'
 require 'pry-byebug'
 
 # Index
@@ -9,7 +11,7 @@ end
 
 # Create event form
 get '/events/new' do
-  @events = Event.all
+  @locations = Location.all
   erb(:'events/new')
 end
 
