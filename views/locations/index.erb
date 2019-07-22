@@ -3,11 +3,5 @@
 <a href="/locations/new">Create a new location</a>
 
 <% @locations.each do |l| %>
-  <p>
-    <%= l.name %> - Capacity: <%= l.capacity %>
-  </p>
-  <a href="/locations/<%= l.id %>/edit">Edit</a>
-  <form action="/locations/<%= l.id %>/delete" method="post">
-    <button type="submit" name="id" value="<%= l.id %>">Delete</button>
-  </form>
+  <p> <a href="/locations/<%= l.id %>"><%= l.name %></a> - Capacity: <%= l.capacity %> </p>
 <% end %>

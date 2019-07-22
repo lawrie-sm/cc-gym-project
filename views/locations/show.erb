@@ -1,0 +1,9 @@
+<h2><%= @location.name %></h2>
+
+<p>Capacity: <%= @location.capacity %></p>
+
+<a href="/locations/<%= @location.id %>/edit">Edit</a>
+
+<form action="/locations/<%= @location.id %>/delete" method="post">
+  <button type="submit" name="id" value="<%= @location.id %>">Delete</button>
+</form>

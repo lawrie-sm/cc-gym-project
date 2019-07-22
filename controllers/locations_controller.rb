@@ -17,6 +17,12 @@ get '/locations/:id/edit' do
   erb(:'/locations/edit')
 end
 
+# Show individual location
+get '/locations/:id' do
+  @location = Location.find(params['id'])
+  erb(:'/locations/show')
+end
+
 # Post to create new location
 post '/locations' do
   location = Location.new(params)
