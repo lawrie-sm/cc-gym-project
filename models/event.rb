@@ -73,7 +73,7 @@ class Event
     sql = '
       UPDATE events
       SET (name, description, time, location_id) =
-      ($1, $2, $3, £4) WHERE id = $5'
+      ($1, $2, $3, $4) WHERE id = $5'
     values = [@name, @description, @time, @location_id, @id]
     SqlRunner.run(sql, values)
   end

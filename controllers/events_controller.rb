@@ -40,6 +40,7 @@ end
 
 # Post updated event
 post '/events/:id' do
+  p "IVE GOT HERE"
   event = Event.new(params)
   event.update
   redirect "/events/#{event.id}"
