@@ -30,6 +30,8 @@
   <button type="submit" name="id" value="<%= @event.id %>">Delete event</button>
 </form>
 
+<% unless Event.number_of_events_in_series(@event.name) == 1 %>
 <form action="/events/<%= @event.name %>/delete-all" method="post">
   <button type="submit" name="id" value="<%= @event.id %>">Delete all events in series</button>
+<% end %>
 </form>

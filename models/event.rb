@@ -136,6 +136,15 @@ class Event
     SqlRunner.run(sql)
   end
 
+  def self.number_of_events_in_series(name)
+    sql = '
+      SELECT * FROM events
+      WHERE name = $1'
+    results = SqlRunner.run(sql, [name])
+    p results.count
+    return results.count
+  end
+
   def self.delete_all_in_series(name)
     sql = '
       DELETE FROM events
