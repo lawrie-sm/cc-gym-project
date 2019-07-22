@@ -34,6 +34,15 @@ class Member
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
+  def update
+    sql = '
+      UPDATE members
+      SET (first_name, last_name, membership) =
+      ($1, $2, $3) WHERE id = $4'
+    values = [@first_name, @last_name, @membership, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.find(id)
     sql = 'SELECT * from members WHERE id = $1'
     result = SqlRunner.run(sql, [id])
