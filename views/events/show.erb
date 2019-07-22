@@ -12,8 +12,8 @@
 
 
 
-<% if @absent_members.count.zero? %>
-  <p>All members are attending this event</p>
+<% if @addable_members.count.zero? %>
+  <p>All eligible members are attending this event</p>
 <% elsif !@event.has_capacity? %>
   <p>This event is full</p>
 <% else %>
@@ -23,7 +23,7 @@
   <form action="/events/<%= @event.id %>/add-member" method="post">
     <label for="members">Members</label>
     <select id="members" name="member_id">
-      <% @absent_members.each do |m| %>
+      <% @addable_members.each do |m| %>
         <option value="<%= m.id %>"><%= m.full_name %></option>
       <% end %>
     </select>
