@@ -15,11 +15,11 @@
   </select>
 
   <label for="start-time">Time</label>
-  <input id="start-time" type="datetime-local" name="start_time">
-  <label for="h">h</label>
-  <input id="h" type="number" name="hours" min="0" value="1">
-  <label for="m">m</label>
-  <input id="m" type="number" name="mins" min="0" value="0">
+  <input id="start-time" type="datetime-local" name="start_time" value="<%= Time.now.xmlschema[0...-9] %>">
+  <label for="hours">h:</label>
+  <input id="hours" type="number" name="hours" min="0" max="12" value="1">
+  <label for="mins">m:</label>
+  <input id="mins" type="number" name="mins" min="0" max="59" value="0">
 
   <button type="submit">Create Event</button>
 </form>
