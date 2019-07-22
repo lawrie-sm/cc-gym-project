@@ -2,24 +2,24 @@
 
 <form action="/events" method="post">
   <label for="name">Name</label>
-  <input id="Name" type="text" name="name">
+  <input id="Name" type="text" name="name" required>
 
   <label for="description">Description</label>
-  <textarea id="description" name="description" rows="4" cols="40"></textarea>
+  <textarea id="description" name="description" rows="4" cols="40" required></textarea>
 
   <label for="location">Location</label>
-  <select id="location" name="location_id">
+  <select id="location" name="location_id" required>
     <% @locations.each do |l| %>
        <option value="<%= l.id %>"> <%= l.name %> - <%= l.capacity %> </option>
     <% end %>
   </select>
 
   <label for="start-time">Time</label>
-  <input id="start-time" type="datetime-local" name="start_time" value="<%= Time.now.xmlschema[0...-9] %>">
+  <input id="start-time" type="datetime-local" name="start_time" value="<%= Time.now.xmlschema[0...-9] %>" required>
   <label for="hours">h:</label>
-  <input id="hours" type="number" name="hours" min="0" max="12" value="1">
+  <input id="hours" type="number" name="hours" min="0" max="12" value="1" required>
   <label for="mins">m:</label>
-  <input id="mins" type="number" name="mins" min="0" max="59" value="0">
+  <input id="mins" type="number" name="mins" min="0" max="59" value="0" required>
 
   <button type="submit">Create Event</button>
 </form>

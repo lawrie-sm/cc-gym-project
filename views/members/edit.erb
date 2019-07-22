@@ -2,13 +2,13 @@
 
 <form action="/members/<%= @member.id %>" method="post">
   <label for="first-name">First name</label>
-  <input id="first-name" type="text" name="first_name" value="<%= @member.first_name %>">
+  <input id="first-name" type="text" name="first_name" value="<%= @member.first_name %>" required>
 
   <label for="last-name">Last name</label>
-  <input id="last-name "type="text" name="last_name" value="<%= @member.last_name %>">
+  <input id="last-name "type="text" name="last_name" value="<%= @member.last_name %>" required>
 
   <label for="membership">Membership</label>
-  <select id="membership" name="membership">
+  <select id="membership" name="membership" required>
     <option <%= @member.membership == "basic" ? "selected" : "" %> value="basic">Basic</option>
     <option <%= @member.membership == "premium" ? "selected" : "" %> value="basic">Premium</option>
   </select>

@@ -2,10 +2,10 @@
 
 <form action="/locations/<%= @location.id %>" method="post">
   <label for="name">Name</label>
-  <input id="name" type="text" name="name" value="<%= @location.name %>">
+  <input id="name" type="text" name="name" value="<%= @location.name %>" required>
 
   <label for="capacity">Capacity</label>
-  <input id="capacity" type="text" name="capacity" value="<%= @location.capacity %>">
+  <input id="capacity" type="text" name="capacity" value="<%= @location.capacity %>" required>
 
   <button type="submit">Update Location</button>
 </form>

@@ -6,9 +6,13 @@
   <button type="submit" name="id" value="<%= @member.id %>">Delete member</button>
 </form>
 
-<p>This member is attending the following events:</p>
-<% @member.events.each do |e| %>
-<p>
-  <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.description %> - <%= e.print_time %>
-</p>
+<% unless @member.events.count.zero? %>
+  <p>This member is attending the following events:</p>
+  <% @member.events.each do |e| %>
+  <p>
+    <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.description %> - <%= e.print_time %>
+  </p>
+  <% end %>
+<% else %>
+<p>This member is not attending any events.</p>
 <% end %>

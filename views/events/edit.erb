@@ -2,13 +2,13 @@
 
 <form class="" action="/events/<%= @event.id %>" method="post">
   <label for="name">Name</label>
-  <input id="Name" type="text" name="name" value="<%= @event.name %>">
+  <input id="Name" type="text" name="name" value="<%= @event.name %>" required>
 
   <label for="description">Description</label>
-  <textarea id="description" name="description" rows="4" cols="40"><%= @event.description %></textarea>
+  <textarea id="description" name="description" rows="4" cols="40" required><%= @event.description %></textarea>
 
   <label for="location">Location</label>
-  <select id="location" name="location_id">
+  <select id="location" name="location_id" required>
     <% @locations.each do |l| %>
       <option <%= l.id == @event.location.id ? "selected" : "" %> value="<%= l.id %>">
         <%= l.name %> - <%= l.capacity %>
@@ -17,11 +17,11 @@
   </select>
 
   <label for="start-time">Time</label>
-  <input id="start-time" type="datetime-local" name="start_time" value="<%= @event.start_time.xmlschema[0...-9] %>">
+  <input id="start-time" type="datetime-local" name="start_time" value="<%= @event.start_time.xmlschema[0...-9] %>" required>
   <label for="hours">h:</label>
-  <input id="hours" type="number" name="hours" min="0" max="12" value="<%= @event.duration[:hours] %>">
+  <input id="hours" type="number" name="hours" min="0" max="12" value="<%= @event.duration[:hours] %>" required>
   <label for="mins">m:</label>
-  <input id="mins" type="number" name="mins" min="0" max="59" value="<%= @event.duration[:mins] %>">
+  <input id="mins" type="number" name="mins" min="0" max="59" value="<%= @event.duration[:mins] %>" required>
 
   <button type="submit">Update Event</button>
 </form>
