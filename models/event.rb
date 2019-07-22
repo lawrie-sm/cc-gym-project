@@ -22,7 +22,7 @@ class Event
   end
 
   def print_time
-    return "#{@start_time} - #{@end_time}"
+    return "#{@start_time.strftime("%b %d %H:%M")}-#{@end_time.strftime("%H:%M")}"
   end
 
   def has_member?(member_id)

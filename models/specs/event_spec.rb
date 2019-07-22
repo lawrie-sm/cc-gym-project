@@ -29,7 +29,7 @@ class TestEvent < MiniTest::Test
   end
 
   def test_print_time
-    assert_equal(@event.print_time, "#{@event.start_time} - #{@event.end_time}")
+    assert_equal(@event.print_time, 'Jan 26 13:00-14:00')
   end
 
   def test_peak__true
