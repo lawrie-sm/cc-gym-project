@@ -1,0 +1,11 @@
+<h2>Edit location</h2>
+
+<form action="/locations/<%= @location.id %>" method="post">
+  <label for="name">Name</label>
+  <input id="name" type="text" name="name" value="<%= @location.name %>">
+
+  <label for="capacity">Capacity</label>
+  <input id="capacity" type="text" name="capacity" value="<%= @location.capacity %>">
+
+  <button type="submit">Update Location</button>
+</form>

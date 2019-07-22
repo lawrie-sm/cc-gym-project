@@ -23,7 +23,7 @@ get '/members/:id' do
   erb(:'members/show')
 end
 
-# Create new member
+# Post to create new member
 post '/members' do
   member = Member.new(params)
   member.save
