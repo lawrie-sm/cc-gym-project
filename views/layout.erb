@@ -10,16 +10,23 @@
   <body>
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/members">Members</a></li>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/locations">Locations</a></li>
+        <li <%= request.path_info == "\/" ? "class=\"active\"" : ""%> >
+          <a href="/">Home</a>
+        </li>
+        <li <%= request.path_info.include?("/members") ? "class=\"active\"" : ""%> >
+          <a href="/members">Members</a>
+        </li>
+        <li <%= request.path_info.include?("/events") ? "class=\"active\"" : ""%> >
+          <a href="/events">Events</a>
+        </li>
+        <li <%= request.path_info.include?("/locations") ? "class=\"active\"" : ""%> >
+          <a href="/locations">Locations</a>
+        </li>
       </ul>
     </nav>
 
     <main>
-    <%= request.path_info  %>
-    <%= yield %>
+      <%= yield %>
     </main>
   </body>
 
