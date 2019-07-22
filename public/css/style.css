@@ -17,12 +17,12 @@
 /* Base styles */
 
 html {
-  background-color: #F8F8FF;
+  background-color: #f9f7f3;
 }
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
-  color: #ed6a5e;
+  color: #0fa3b1;
 }
 
 h1 {
@@ -40,11 +40,11 @@ h3 {
 a {
   text-transform: capitalize;
   text-decoration: none;
-  color: #377771;
+  color: #0fa3b1;
 }
 
 hr {
-  color: #377771;
+  color: #BBC5AA;
   margin: 15px auto;
   border-top: 1px;
   border-style: solid;
@@ -58,7 +58,7 @@ nav ul {
   flex-wrap: nowrap;
   justify-content: center;
   list-style-type: none;
-  background-color: #4ce0b3;
+  background-color: #0fa3b1;
 }
 
 nav li {
@@ -67,7 +67,7 @@ nav li {
 }
 
 nav a {
-  color: #377771;
+  color: #f9f7f3;
   font-weight: 700;
   text-decoration: none;
 }
@@ -81,4 +81,30 @@ nav .active {
 main {
   width: 500px;
   margin: 50px auto;
+}
+
+.add-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 100px;
+  width: 75%;
+  padding: 5%;
+  margin: 10px auto;
+  color: #f9f7f3;
+  background: rgb(15,163,177);
+  background: linear-gradient(90deg, rgba(15,163,177,1) 0%, rgba(181,226,250,1) 75%, rgba(181,226,250,1) 100%);
+  -webkit-box-shadow: 7px 7px 13px -4px rgba(179,179,179,1);
+  -moz-box-shadow: 7px 7px 13px -4px rgba(179,179,179,1);
+  box-shadow: 7px 7px 13px -4px rgba(179,179,179,1);
+}
+
+.add-item h3, h4, h5, h6, a, .plus {
+  text-align: center;
+  color: #f9f7f3;
+}
+
+.plus {
+  font-size: 150%;
 }
