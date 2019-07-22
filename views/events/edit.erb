@@ -16,8 +16,12 @@
     <% end %>
   </select>
 
-  <label for="end-time">End Time</label>
-  <input id="end-time" type="datetime-local" name="end_time" value="<%= @event.html_end_time_string %>">
+  <label for="start-time">Time</label>
+  <input id="start-time" type="datetime-local" name="start_time" value="<%= @event.start_time.xmlschema[0...-9] %>">
+  <label for="hours">h:</label>
+  <input id="hours" type="number" name="hours" min="0" max="12" value="<%= @event.duration[:hours] %>">
+  <label for="mins">m:</label>
+  <input id="mins" type="number" name="mins" min="0" max="59" value="<%= @event.duration[:mins] %>">
 
   <button type="submit">Update Event</button>
 </form>

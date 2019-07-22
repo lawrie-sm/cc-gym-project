@@ -10,19 +10,30 @@ class Event
     @id = options['id'].to_i if options['id']
     @name = options['name'].downcase
     @description = options['description']
+    @location_id = options['location_id']
+
     @start_time = options['start_time']
     @start_time = Time.parse(@start_time) if @start_time.is_a?(String)
-    @end_time = options['end_time']
-    @end_time = Time.parse(@end_time) if @end_time.is_a?(String)
-    @location_id = options['location_id']
+
+    if options['end_time']
+      @end_time = options['end_time']
+      @end_time = Time.parse(@end_time) if @end_time.is_a?(String)
+    elsif options['hours'] && options['mins']
+      @end_time = get_end_time(options['hours'], options['mins'])
+    end
   end
 
-  def html_start_time_string
-    return @start_time.xmlschema[0...-9]
+  def get_end_time(hours, mins)
+    hours = hours.to_i
+    mins = mins.to_i
+    return @start_time + (mins * 60) + (hours * 60 * 60)
   end
 
-  def html_end_time_string
-    return @end_time.xmlschema[0...-9]
+  def duration
+    total_mins = ((@end_time - @start_time) / 60).to_i
+    hours = (total_mins / 60).to_i
+    mins = (total_mins % 60).to_i
+    return { hours: hours, mins: mins }
   end
 
   def print_time
