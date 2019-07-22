@@ -17,8 +17,12 @@ class Event
     @location_id = options['location_id']
   end
 
-  def html_time_string
+  def html_start_time_string
     return @start_time.xmlschema[0...-9]
+  end
+
+  def html_end_time_string
+    return @end_time.xmlschema[0...-9]
   end
 
   def print_time
@@ -98,7 +102,9 @@ class Event
   end
 
   def self.all
-    sql = 'SELECT * FROM events'
+    sql = '
+      SELECT * FROM events
+      ORDER BY events.start_time'
     results = SqlRunner.run(sql)
     return results.map { |e| Event.new(e) }
   end

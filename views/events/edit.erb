@@ -16,8 +16,8 @@
     <% end %>
   </select>
 
-  <label for="time">Time</label>
-  <input id="time" type="datetime-local" name="time" value="<%= @event.html_time_string %>">
+  <label for="end-time">End Time</label>
+  <input id="end-time" type="datetime-local" name="end_time" value="<%= @event.html_end_time_string %>">
 
   <button type="submit">Update Event</button>
 </form>

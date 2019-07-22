@@ -14,8 +14,12 @@
     <% end %>
   </select>
 
-  <label for="time">Time</label>
-  <input id="time" type="datetime-local" name="time">
+  <label for="start-time">Time</label>
+  <input id="start-time" type="datetime-local" name="start_time">
+  <label for="h">h</label>
+  <input id="h" type="number" name="hours" min="0" value="1">
+  <label for="m">m</label>
+  <input id="m" type="number" name="mins" min="0" value="0">
 
   <button type="submit">Create Event</button>
 </form>

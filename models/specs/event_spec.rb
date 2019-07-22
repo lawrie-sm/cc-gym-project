@@ -24,8 +24,9 @@ class TestEvent < MiniTest::Test
     assert_equal(@event.location_id, 10)
   end
 
-  def test_html_time_string
-    assert_equal(@event.html_time_string, '1991-01-26T13:00')
+  def test_html_time_strings
+    assert_equal(@event.html_start_time_string, '1991-01-26T13:00')
+    assert_equal(@event.html_end_time_string, '1991-01-26T14:00')
   end
 
   def test_print_time

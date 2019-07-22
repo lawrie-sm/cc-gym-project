@@ -41,6 +41,10 @@ end
 
 # Post new event
 post '/events' do
+  start = Time.parse(params['start_time'])
+  hours = params['hours'].to_i
+  mins = params['mins'].to_i
+  params['end_time'] = start + (mins * 60) + (hours * 60 * 60)
   event = Event.new(params)
   event.save
   redirect "/events/#{event.id}"

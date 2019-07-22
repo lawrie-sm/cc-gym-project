@@ -1,3 +1,5 @@
+- Add required to attributes
+- Make sure start time is before end time
 - Prevent two events at the same location at the same time
 - Prevent customers from being added to multiple events at the same time
 - Add recurring events
