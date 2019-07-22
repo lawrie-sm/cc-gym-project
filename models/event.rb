@@ -44,12 +44,14 @@ class Event
     return Location.find(@location_id)
   end
 
-  def add_member(member_id)
-    if has_capacity?
+  def add_member(member)
+    if has_capacity? &&
+       ((member.membership == 'premium') ||
+       (member.membership == 'basic' && !peak?))
       sql = '
         INSERT INTO members_events (member_id, event_id)
         VALUES ($1, $2)'
-      values = [member_id, @id]
+      values = [member.id, @id]
       SqlRunner.run(sql, values)
     end
   end

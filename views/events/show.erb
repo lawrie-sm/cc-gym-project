@@ -19,6 +19,7 @@
 <% else %>
   <h3>Add member</h3>
   <p>The <%= @event.location.name %> has <%= @event.location.capacity - @event.members.count%> spot(s) left.</p>
+  <%= @event.peak? ? "<p>This is a peak event. Only premium members can be added</p>" : "" %>
   <form action="/events/<%= @event.id %>/add-member" method="post">
     <label for="members">Members</label>
     <select id="members" name="member_id">

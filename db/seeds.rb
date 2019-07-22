@@ -80,8 +80,8 @@ anne.save
 # Associate members with events
 #
 
-spin_class.add_member(arnold.id)
-spin_class.add_member(anne.id)
-spin_class.add_member(silvio.id)
-lifting_class.add_member(arnold.id)
-lifting_class.add_member(conor.id)
+spin_class.add_member(arnold)
+spin_class.add_member(anne)
+spin_class.add_member(silvio)
+lifting_class.add_member(arnold)
+lifting_class.add_member(conor)

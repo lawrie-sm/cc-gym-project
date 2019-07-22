@@ -49,9 +49,11 @@ end
 # Post new member to event
 post '/events/:id/add-member' do
   @event = Event.find(params['id'])
-  @event.add_member(params['member_id'])
+  @member = Member.find(params['member_id'])
+  @event.add_member(@member)
   redirect "/events/#{@event.id}"
 end
+
 
 # Post to remove member from event
 post '/events/:id/remove-member' do
