@@ -18,6 +18,7 @@ end
 # Edit event form
 get '/events/:id/edit' do
   @event = Event.find(params['id'])
+  @locations = Location.all
   erb(:'events/edit')
 end
 

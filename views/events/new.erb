@@ -10,7 +10,7 @@
   <label for="location">Location</label>
   <select id="location" name="location_id">
     <% @locations.each do |l| %>
-       <option value="<%= l.id %>"><%= l.name %> - <%= l.capacity %></option>
+       <option value="<%= l.id %>"> <%= l.name %> - <%= l.capacity %> </option>
     <% end %>
   </select>
 
