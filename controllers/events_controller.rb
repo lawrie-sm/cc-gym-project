@@ -1,6 +1,7 @@
 require_relative '../models/event'
 require_relative '../models/member'
 require_relative '../models/location'
+require_relative '../models/time_utils'
 require 'pry-byebug'
 
 # Index
@@ -30,9 +31,13 @@ end
 
 # Post new event
 post '/events' do
-  event = Event.new(params)
-  event.save
-  redirect "/events/#{event.id}"
+  times = TimeUtils.get_recurring_times(params['start_time'], params['recurrence'])
+  times.each do |t|
+    params['start_time'] = t
+    event = Event.new(params)
+    event.save
+  end
+  redirect "/events"
 end
 
 # Post updated event

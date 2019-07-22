@@ -2,7 +2,7 @@ require 'time'
 require_relative '../db/sql_runner'
 require_relative 'location'
 require_relative 'member'
-require_relative 'peak_times'
+require_relative 'time_utils'
 
 class Event
   attr_reader :id, :name, :description, :start_time, :end_time, :location_id
@@ -50,7 +50,7 @@ class Event
   end
 
   def peak?
-    return PeakTimes.within_peak_times?(@start_time)
+    return TimeUtils.within_peak_times?(@start_time)
   end
 
   def location
