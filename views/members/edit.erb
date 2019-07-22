@@ -1,16 +1,16 @@
-<h2>Edit member</h2>
+<h2>Edit <%= @member.full_name %></h2>
 
 <form action="/members" method="post">
   <label for="first-name">First name</label>
-  <input id="first-name" type="text" name="first_name">
+  <input id="first-name" type="text" name="first_name" value="<%= @member.first_name %>">
 
   <label for="last-name">Last name</label>
-  <input type="text" name="last_name">
+  <input id="last-name "type="text" name="last_name" value="<%= @member.last_name %>">
 
   <label for="membership">Membership</label>
   <select id="membership" name="membership">
-    <option value="basic">Basic</option>
-    <option value="basic">Premium</option>
+    <option <%= @member.membership == "basic" ? "selected" : "" %> value="basic">Basic</option>
+    <option <%= @member.membership == "premium" ? "selected" : "" %> value="basic">Premium</option>
   </select>
 
   <button type="submit">Update Member</button>
