@@ -1,9 +1,20 @@
+require_relative 'event'
+
 class Location
   attr_reader :id, :name, :capacity
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name'].downcase
     @capacity = options['capacity'].to_i
+  end
+
+  def events
+    sql = '
+      SELECT e.* from events e
+      WHERE e.location_id = $1'
+    results = SqlRunner.run(sql, [@id])
+    results = results.map { |e| Event.new(e) }
+    return results
   end
 
   def save

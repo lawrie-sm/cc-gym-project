@@ -7,3 +7,10 @@
 <form action="/locations/<%= @location.id %>/delete" method="post">
   <button type="submit" name="id" value="<%= @location.id %>">Delete</button>
 </form>
+
+<p>The following events are taking place at this location:</p>
+<% @location.events.each do |e| %>
+  <p>
+    <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.description %> - <%= e.time %>
+  </p>
+<% end %>
