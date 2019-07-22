@@ -50,7 +50,11 @@ class Member
   end
 
   def self.all
-    sql = 'SELECT * FROM members'
+    sql = '
+      SELECT * FROM members
+      ORDER BY
+        membership DESC,
+        first_name ASC'
     results = SqlRunner.run(sql)
     return results.map { |e| Member.new(e) }
   end

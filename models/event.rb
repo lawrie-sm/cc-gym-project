@@ -141,7 +141,6 @@ class Event
       SELECT * FROM events
       WHERE name = $1'
     results = SqlRunner.run(sql, [name])
-    p results.count
     return results.count
   end
 
