@@ -1,5 +1,6 @@
 <h2>Edit <%= @event.name %></h2>
 
+<form class="" action="/events/<%= @event.id %>" method="post">
   <label for="name">Name</label>
   <input id="Name" type="text" name="name" value="<%= @event.name %>">
 

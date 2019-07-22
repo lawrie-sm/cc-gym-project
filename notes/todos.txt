@@ -1,3 +1,4 @@
+- Editing members and events
 - Add some code for dealing with peak / off peak times
 - Add recurring events
 - Add locations, prevent two events at the same location at the same time

@@ -1,0 +1,3 @@
+*.rb -lf
+*.erb -lf
+*.sql -lf
