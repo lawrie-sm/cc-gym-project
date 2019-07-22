@@ -43,7 +43,9 @@ class Location
   end
 
   def self.all
-    sql = 'SELECT * FROM locations'
+    sql = '
+      SELECT * FROM locations
+      ORDER BY name'
     results = SqlRunner.run(sql)
     return results.map { |e| Location.new(e) }
   end
