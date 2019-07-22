@@ -27,12 +27,18 @@ class Event
     return current_ids.include?(member_id)
   end
 
+  def has_capacity?
+    return members.count < location.capacity
+  end
+
   def add_member(member_id)
-    sql = '
-      INSERT INTO members_events (member_id, event_id)
-      VALUES ($1, $2)'
-    values = [member_id, @id]
-    SqlRunner.run(sql, values)
+    if has_capacity?
+      sql = '
+        INSERT INTO members_events (member_id, event_id)
+        VALUES ($1, $2)'
+      values = [member_id, @id]
+      SqlRunner.run(sql, values)
+    end
   end
 
   def remove_member(member_id)

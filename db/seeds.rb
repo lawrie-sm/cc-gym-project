@@ -12,13 +12,13 @@ Location.delete_all
 
 weights_room = Location.new(
   'name' => 'weights room',
-  'capacity' => 5
+  'capacity' => 3
 )
 weights_room.save
 
 spin_room = Location.new(
   'name' => 'spin room',
-  'capacity' => 10
+  'capacity' => 5
 )
 spin_room.save
 
@@ -58,11 +58,30 @@ conor = Member.new(
   'membership' => 'basic'
 )
 conor.save
-
+silvio = Member.new(
+  'first_name' => 'silvio',
+  'last_name' => 'berlusconi',
+  'membership' => 'basic'
+)
+silvio.save
+donald = Member.new(
+  'first_name' => 'donald',
+  'last_name' => 'trump',
+  'membership' => 'basic'
+)
+donald.save
+anne = Member.new(
+  'first_name' => 'anne',
+  'last_name' => 'stuart',
+  'membership' => 'premium'
+)
+anne.save
 #
 # Associate members with events
 #
 
 spin_class.add_member(arnold.id)
+spin_class.add_member(anne.id)
+spin_class.add_member(silvio.id)
 lifting_class.add_member(arnold.id)
 lifting_class.add_member(conor.id)
