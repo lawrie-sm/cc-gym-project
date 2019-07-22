@@ -2,14 +2,33 @@
 
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 100%;
+  color: #211A1E;
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
   vertical-align: baseline;
   background: transparent;
+}
+
+/* Base styles */
+
+html {
+  background-color: #F8F8FF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: capitalize;
+  color: #ed6a5e;
+  margin: 1em 0;
+}
+
+a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #377771;
 }
 
 /* Nav bar */
@@ -20,7 +39,7 @@ nav ul {
   flex-wrap: nowrap;
   justify-content: center;
   list-style-type: none;
-  background-color: blue;
+  background-color: #4ce0b3;
 }
 
 nav li {
@@ -29,8 +48,8 @@ nav li {
 }
 
 nav a {
-  color: white;
-  font-weight: bold;
+  color: #377771;
+  font-weight: 700;
   text-decoration: none;
 }
 
