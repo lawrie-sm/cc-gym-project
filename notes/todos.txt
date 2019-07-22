@@ -1,12 +1,10 @@
-- Editing members and events
-- Add some code for dealing with peak / off peak times
-- Add recurring events
-- Add locations, prevent two events at the same location at the same time
+- Add some code for dealing with peak / off peak times, use time ranges in membership class?
+- Add better feedback when trying to add to events that are already at capacity
+- Prevent two events at the same location at the same time
 - Prevent customers from being added to multiple events at the same time
+- Add recurring events
 - Add a calender view with upcoming events
-- Add memberships into the DB, with pics
-- add pics/logos for events
-- Add pics to users
+- add pics/logos for events/locaitons/members/membership tiers/users
 - Use CSS text-transform to capitalise words
 - Dynamically update the navbar based on location
   (i.e no "home" while on home page)
