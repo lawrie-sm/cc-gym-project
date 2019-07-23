@@ -1,6 +1,8 @@
-<h2><%= @member.print_name %></h2>
+<div class="row align-end">
+  <h2><%= @member.print_name %></h2>
+  <a href="/members/<%= @member.id %>/edit"><i class="left-m material-icons">settings</i></a>
+</div>
 <p><strong><%= @member.membership.capitalize %> member</strong></p>
-<a href="/members/<%= @member.id %>/edit">Edit</a>
 
 <hr>
 

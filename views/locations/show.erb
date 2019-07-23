@@ -1,6 +1,8 @@
-<h2><%= @location.print_name %></h2>
+<div class="row align-end">
+  <h2><%= @location.print_name %></h2>
+  <a href="/locations/<%= @location.id %>/edit"><i class="left-m material-icons">settings</i></a>
+</div>
 <p><strong>Capacity: <%= @location.capacity %></strong></p>
-<a href="/locations/<%= @location.id %>/edit">Edit</a>
 
 <hr>
 
