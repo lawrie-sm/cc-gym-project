@@ -36,6 +36,10 @@ class TestEvent < MiniTest::Test
     assert_equal(@event.print_long_date, 'January 26, 1991')
   end
 
+  def test_print_time_web_format
+    assert_equal(@event.print_time_web_format, '1991-01-26T13:00')
+  end
+
   def test_duration
     assert_equal(@event.duration, hours: 1, mins: 15)
   end

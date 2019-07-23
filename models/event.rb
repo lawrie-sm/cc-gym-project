@@ -36,6 +36,10 @@ class Event
     return { hours: hours, mins: mins }
   end
 
+  def print_time_web_format
+    return @start_time.strftime('%Y-%m-%dT%H:%M')
+  end
+
   def print_time
     return "#{@start_time.strftime('%H:%M')}-#{@end_time.strftime('%H:%M')}"
   end
