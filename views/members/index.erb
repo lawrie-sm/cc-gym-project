@@ -4,6 +4,6 @@
 
 <ul class="item-list">
 <% @members.each do |m| %>
-  <li><a href="/members/<%= m.id %>"><%= m.full_name %></a> - <span class="cap"><%= m.membership %></span></li>
+  <li><a href="/members/<%= m.id %>"><%= m.print_name %></a> - <span class="cap"><%= m.membership %></span></li>
 <% end %>
 </ul>

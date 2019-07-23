@@ -17,33 +17,54 @@
 <hr>
 
 <% if @event.addable_members.count.zero? %>
-  <p>All eligible members are attending this event</p>
+
+  <p>
+    <em class="greyed">All eligible members are attending this event. Remove members to make space.</em>
+  </p>
+
 <% elsif !@event.has_capacity? %>
-  <p>This event is full</p>
+
+  <p>
+    <em class="greyed">The location is filled to capacity. Remove members to make space.</em>
+  </p>
+
 <% else %>
-  <h3>Add member</h3>
-  <p>The <%= @event.location.name %> has <%= @event.location.capacity - @event.members.count%> spot(s) left.</p>
-  <%= @event.peak? ? "<p>This is a peak event. Only premium members can be added</p>" : "" %>
+
+  <h4>Add member</h4>
+
   <form action="/events/<%= @event.id %>/add-member" method="post">
     <label for="members">Members</label>
     <select id="members" name="member_id">
       <% @event.addable_members.each do |m| %>
-        <option value="<%= m.id %>"><%= m.full_name %></option>
+        <option value="<%= m.id %>"><%= m.print_name %></option>
       <% end %>
     </select>
     <button type="submit">Add Member</button>
   </form>
+
+  <p>
+    <em class="greyed">
+      <%= @event.peak? ? "<p>This is a peak event. Only premium members can be added.</p>" : "" %>
+      <span class="greyed cap"><%= @event.location.name %></span> has <%= @event.location.capacity - @event.members.count%> spot(s) left.
+    </em>
+  </p>
 <% end %>
 
 
 <% unless  @event.members.count.zero? %>
-  <h3>Members attending</h3>
+
+<hr>
+
+  <h4>Member List</h4>
+
+<ul class="item-list">
   <% @event.members.each do |m| %>
-    <p>
-      <a href="/members/<%= m.id %>"><%= m.full_name %></a> - <%= m.membership.capitalize %>
+    <li>
+      <a href="/members/<%= m.id %>"><span class="cap"><%= m.print_name %></span></a> - <%= m.membership.capitalize %>
       <form action="/events/<%= @event.id %>/remove-member" method="post">
         <button type="submit" name="member_id" value="<%= m.id %>">Remove</button>
       </form>
-    </p>
+    </li>
+  </ul>
   <% end %>
 <% end %>
