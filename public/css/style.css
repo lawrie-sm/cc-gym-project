@@ -263,16 +263,15 @@ button.btn-del:hover {
   margin-bottom: 20px;
 }
 
-.left-m {
-  margin-left: 10px;
-}
-
 /* Icons */
 
 .material-icons {
   color: #0fa3b1;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
+  position: relative;
+  left: -10px;
+  margin-left: -25px
 }
 
 .material-icons:hover {
