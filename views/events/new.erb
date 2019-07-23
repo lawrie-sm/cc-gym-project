@@ -2,7 +2,7 @@
 
 <form class="col-form" action="/events" method="post">
 
-<div class="form-col">
+<div class="col">
     <label for="name">Name</label>
     <input id="Name" type="text" name="name" required>
 
@@ -23,7 +23,7 @@
 
 
   <label for="start-time">Time</label>
-  <div class="form-row">
+  <div class="row">
     <input id="start-time" type="datetime-local" name="start_time" value="<%= Time.now.xmlschema[0...-9] %>" required>
     <label for="hours">Hours</label>
     <input id="hours" type="number" name="hours" min="0" max="12" value="1" required>
@@ -35,7 +35,7 @@
 
 
   <label>Recurrence</label>
-  <div class="form-row">
+  <div class="row">
     <label for="one-time">One-time</label>
     <input id="one-time" type="radio" name="recurrence" value="one-time" checked>
     <label for="weekly">Weekly</label>

@@ -1,18 +1,18 @@
 <h2>Events</h2>
 <a href="/events/new">Add +</a>
 
-<div class="item-container">
+<div class="col">
   <% @events.each do |e| %>
     <div class="item">
-      <div class="item-row">
+      <div class="row spaced-row">
         <a href="/events/<%= e.id %>"><%= e.name %></a>
         <p class="greyed"> <%= e.print_date %> </p>
       </div>
-      <div class="item-row">
+      <div class="row spaced-row">
         <p><%= e.description %></p>
         <p><span class="greyed"><%= e.print_time %></span></p>
       </div>
-      <div class="item-row reversed-row">
+      <div class="row spaced-row reversed-row">
         <p class="greyed cap"> <%= e.location.print_name %></p>
       </div>
     </div>
