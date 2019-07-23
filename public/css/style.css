@@ -88,21 +88,3 @@ main {
   width: 500px;
   margin: 50px auto;
 }
-
-.flex-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.item {
-  width: 80%;
-  padding: 10px;
-  color: #f9f7f3;
-  background-color: #0fa3b1;
-  margin: 15px auto;
-  border-style: solid;
-}
-
-.item a {
-  color: #f9f7f3;
-}
