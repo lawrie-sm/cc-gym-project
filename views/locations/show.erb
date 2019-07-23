@@ -1,12 +1,14 @@
 <h2><%= @location.print_name %></h2>
-
-<p>Capacity: <%= @location.capacity %></p>
-
+<p><strong>Capacity: <%= @location.capacity %></strong></p>
 <a href="/locations/<%= @location.id %>/edit">Edit</a>
 
-<p>The following events are taking place at this location:</p>
-<% @location.events.each do |e| %>
-  <p>
-    <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.description %> - <%= e.print_time %>
-  </p>
-<% end %>
+<hr>
+
+<h4>Event List</h4>
+<ul class="item-list">
+  <% @location.events.each do |e| %>
+    <li>
+      <a href="/events/<%= e.id %>"><%= e.name %></a> - <%= e.print_date %>
+    </li>
+  <% end %>
+</ul>
