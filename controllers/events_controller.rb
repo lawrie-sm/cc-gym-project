@@ -31,12 +31,7 @@ end
 
 # Post new event
 post '/events' do
-  times = TimeUtils.get_recurring_times(params['start_time'], params['recurrence'])
-  times.each do |t|
-    params['start_time'] = t
-    event = Event.new(params)
-    event.save
-  end
+  Event.create_recurring_events(params)
   redirect "/events"
 end
 

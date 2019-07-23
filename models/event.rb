@@ -127,6 +127,15 @@ class Event
     SqlRunner.run(sql, values)
   end
 
+  def self.create_recurring_events(params)
+    times = TimeUtils.get_recurring_times(params['start_time'], params['recurrence'])
+    times.each do |t|
+      params['start_time'] = t
+      event = Event.new(params)
+      event.save
+    end
+  end
+
   def self.find(id)
     sql = 'SELECT * from events WHERE id = $1'
     result = SqlRunner.run(sql, [id])
