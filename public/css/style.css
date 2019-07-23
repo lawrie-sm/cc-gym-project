@@ -119,6 +119,43 @@ main {
   line-height: 2em;
 }
 
+/* Forms */
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+form.inline {
+  display: inline;
+}
+
+button {
+  height: 50px;
+  margin: 0px 10px;
+  padding: 5px 15px;
+  color: #f9f7f3;
+  background-color: #0fa3b1;
+  cursor: pointer;
+}
+
+form.inline > button {
+  color: #0fa3b1;
+  background-color: inherit;
+  outline: 0;
+}
+
+select {
+  height: 50px;
+  margin: 0px 10px;
+  -webkit-border-radius: 0;
+  border: 0;
+  outline: 1px solid #BBC5AA;
+  outline-offset: -1px;
+}
+
 /* Helper classes */
 
 .greyed {

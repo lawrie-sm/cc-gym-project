@@ -21,19 +21,25 @@
   <p>
     <em class="greyed">All eligible members are attending this event. Remove members to make space.</em>
   </p>
+<hr>
 
 <% elsif !@event.has_capacity? %>
 
   <p>
     <em class="greyed">The location is filled to capacity. Remove members to make space.</em>
   </p>
+<hr>
 
 <% else %>
-
-  <h4>Add member</h4>
+  <p>
+    <em class="greyed">
+      <%= @event.peak? ? "<p>This is a peak event. Only premium members can be added.</p>" : "" %>
+      <span class="greyed cap"><%= @event.location.name %></span> has <%= @event.location.capacity - @event.members.count%> spot(s) left.
+    </em>
+  </p>
+<hr>
 
   <form action="/events/<%= @event.id %>/add-member" method="post">
-    <label for="members">Members</label>
     <select id="members" name="member_id">
       <% @event.addable_members.each do |m| %>
         <option value="<%= m.id %>"><%= m.print_name %></option>
@@ -41,30 +47,24 @@
     </select>
     <button type="submit">Add Member</button>
   </form>
-
-  <p>
-    <em class="greyed">
-      <%= @event.peak? ? "<p>This is a peak event. Only premium members can be added.</p>" : "" %>
-      <span class="greyed cap"><%= @event.location.name %></span> has <%= @event.location.capacity - @event.members.count%> spot(s) left.
-    </em>
-  </p>
 <% end %>
 
 
 <% unless  @event.members.count.zero? %>
-
-<hr>
 
   <h4>Member List</h4>
 
 <ul class="item-list">
   <% @event.members.each do |m| %>
     <li>
-      <a href="/members/<%= m.id %>"><span class="cap"><%= m.print_name %></span></a> - <%= m.membership.capitalize %>
-      <form action="/events/<%= @event.id %>/remove-member" method="post">
-        <button type="submit" name="member_id" value="<%= m.id %>">Remove</button>
+
+      <a href="/members/<%= m.id %>"><%= m.print_name %></a> - <%= m.membership.capitalize %>
+
+      <form class="inline" action="/events/<%= @event.id %>/remove-member" method="post">
+        <button type="submit" name="member_id" value="<%= m.id %>">[-]</button>
       </form>
+
     </li>
-  </ul>
   <% end %>
+  </ul>
 <% end %>
