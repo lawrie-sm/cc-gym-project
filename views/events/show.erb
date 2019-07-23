@@ -1,10 +1,20 @@
 <h2><%= @event.name %></h2>
+<a href="/events/<%= @event.id %>/edit">Edit</a>
+<hr>
 
-<a href="/events/<%= @event.id %>/edit">Edit event</a>
+<p>
+  <strong>Location:</strong>
+  <span class="cap">
+    <a href="/locations/<%= @event.location_id %>">
+      <%= @event.location.name %>
+    </a>
+  </span>
+</p>
+<p><strong>Date:</strong> <%= @event.print_long_date %></p>
+<p><strong>Time:</strong> <%= @event.print_time %></p>
+<p><strong>Description:</strong> <%= @event.description %></p>
 
-<p><%= @event.location.name %></p>
-<p><%= @event.print_time %></p>
-<p><%= @event.description %></p>
+<hr>
 
 <% if @event.addable_members.count.zero? %>
   <p>All eligible members are attending this event</p>

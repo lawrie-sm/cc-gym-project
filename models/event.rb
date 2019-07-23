@@ -41,7 +41,11 @@ class Event
   end
 
   def print_date
-    return @start_time.strftime("%b %d")
+    return @start_time.strftime("%e/%m/%y")
+  end
+
+  def print_long_date
+    return @start_time.strftime("%B %e, %Y")
   end
 
   def has_member?(member_id)

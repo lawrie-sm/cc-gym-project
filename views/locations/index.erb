@@ -1,7 +1,9 @@
 <h2>Locations</h2>
+<a href="/locations/new">Add location +</a>
+<hr>
 
-<a href="/locations/new">Create a new location</a>
-
-<% @locations.each do |l| %>
-  <p> <a href="/locations/<%= l.id %>"><%= l.name %></a> - Capacity: <%= l.capacity %> </p>
-<% end %>
+<ul class="item-list">
+  <% @locations.each do |l| %>
+    <li> <a href="/locations/<%= l.id %>"><%= l.name %></a> - <%= l.capacity %> spots</li>
+  <% end %>
+</ul>

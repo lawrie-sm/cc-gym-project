@@ -88,9 +88,6 @@ main {
   margin: 50px auto;
 }
 
-.formal-name {
-  text-transform: capitalize;
-}
 
 .item-container {
   display: flex;
@@ -114,10 +111,20 @@ main {
   flex-direction: row;
 }
 
+.reversed-row {
+  flex-direction: row-reverse;
+}
+
+.item-list > li{
+  line-height: 2em;
+}
+
+/* Helper classes */
+
 .greyed {
   color: #BBC5AA;
 }
 
-.reversed-row {
-  flex-direction: row-reverse;
+.cap {
+  text-transform: capitalize;
 }

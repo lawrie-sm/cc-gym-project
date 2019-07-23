@@ -6,14 +6,14 @@
     <div class="item">
       <div class="item-row">
         <a href="/events/<%= e.id %>"><%= e.name %></a>
-        <p class="greyed"><%= e.print_date %> <%= e.print_time %> </p>
+        <p class="greyed"> <%= e.print_date %> </p>
       </div>
       <div class="item-row">
         <p><%= e.description %></p>
-        <p><span class="greyed formal-name"><%= e.location.name %></span></p>
+        <p><span class="greyed"><%= e.print_time %></span></p>
       </div>
       <div class="item-row reversed-row">
-        <p class="greyed"> <%= e.members.count %> / <%= e.location.capacity %> spaces</p>
+        <p class="greyed cap"> <%= e.location.name %></p>
       </div>
     </div>
   <% end %>
