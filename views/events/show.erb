@@ -39,21 +39,20 @@
   </p>
 <hr>
 
-  <form class="col-form" action="/events/<%= @event.id %>/add-member" method="post">
-    <div class="row">
-      <label for="members">Add Members</label>
+  <form class="col-form  bottom-m" action="/events/<%= @event.id %>/add-member" method="post">
+    <div class="row no-top-m">
+      <label class="no-vert-m" for="members">Add Members</label>
     </div>
+    <div class="row">
+      <select class="grow" id="members" name="member_id">
+        <% @event.addable_members.each do |m| %>
+        <option value="<%= m.id %>"><%= m.print_name %></option>
+        <% end %>
+      </select>
+      <button class="btn no-vert-m" type="submit">Add</button>
+    </div>
+  </form>
 
-<div class="row">
-  <select class="grow" id="members" name="member_id">
-    <% @event.addable_members.each do |m| %>
-      <option value="<%= m.id %>"><%= m.print_name %></option>
-    <% end %>
-  </select>
-
-  <button class="btn no-vert-m" type="submit">Add</button>
-</div>
-</form>
 <% end %>
 
 
