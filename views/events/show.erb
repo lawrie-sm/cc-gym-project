@@ -31,7 +31,6 @@
   <p>
     <em class="greyed">The location is filled to capacity. Remove members to make space.</em>
   </p>
-<hr>
 
 <% else %>
   <p>
@@ -44,7 +43,7 @@
 
   <form class="col-form  bottom-m" action="/events/<%= @event.id %>/add-member" method="post">
     <div class="row no-top-m">
-      <label class="no-vert-m" for="members">Add Members</label>
+      <label class="no-vert-m" for="members"><strong>Add Members</strong></label>
     </div>
     <div class="row">
       <select class="grow" id="members" name="member_id">
