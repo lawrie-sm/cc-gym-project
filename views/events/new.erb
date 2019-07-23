@@ -2,17 +2,13 @@
 
 <form class="col-form" action="/events" method="post">
 
-<div class="col">
-    <label for="name">Name</label>
-    <input id="Name" type="text" name="name" required>
-
+  <label for="name">Name</label>
+  <input id="Name" type="text" name="name" required>
 
   <label for="description">Description</label>
   <textarea id="description" name="description"
     placeholder="Enter a short description of the event." required>
   </textarea>
-
-
 
   <label for="location">Location</label>
   <select id="location" name="location_id" placeholder="location" required>
@@ -23,7 +19,7 @@
 
 
   <label for="start-time">Time</label>
-  <div class="row">
+  <div class="row no-top-m">
     <input id="start-time" type="datetime-local" name="start_time" value="<%= Time.now.xmlschema[0...-9] %>" required>
     <label for="hours">Hours</label>
     <input id="hours" type="number" name="hours" min="0" max="12" value="1" required>
@@ -31,11 +27,8 @@
     <input id="mins" type="number" name="mins" min="0" max="59" value="0" required>
   </div>
 
-
-
-
   <label>Recurrence</label>
-  <div class="row">
+  <div class="row no-top-m">
     <label for="one-time">One-time</label>
     <input id="one-time" type="radio" name="recurrence" value="one-time" checked>
     <label for="weekly">Weekly</label>
@@ -43,8 +36,6 @@
     <label for="monthly">Monthly</label>
     <input id="monthly" type="radio" name="recurrence" value="monthly">
   </div>
-</div>
-
 
   <button class="btn" type="submit">Create Event</button>
 </form>

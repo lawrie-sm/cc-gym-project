@@ -1,6 +1,9 @@
 <h2>Edit <%= @event.name %></h2>
 
-<form class="" action="/events/<%= @event.id %>" method="post">
+
+<div class="col">
+<form class="col-form" action="/events/<%= @event.id %>" method="post">
+
   <label for="name">Name</label>
   <input id="Name" type="text" name="name" value="<%= @event.name %>" required>
 
@@ -16,22 +19,29 @@
     <% end %>
   </select>
 
+<div class="row">
   <label for="start-time">Time</label>
   <input id="start-time" type="datetime-local" name="start_time" value="<%= @event.start_time.xmlschema[0...-9] %>" required>
   <label for="hours">h:</label>
   <input id="hours" type="number" name="hours" min="0" max="12" value="<%= @event.duration[:hours] %>" required>
   <label for="mins">m:</label>
   <input id="mins" type="number" name="mins" min="0" max="59" value="<%= @event.duration[:mins] %>" required>
+</div>
 
-  <button type="submit">Update Event</button>
+  <button class="btn" type="submit">Update Event</button>
+
 </form>
 
-<form action="/events/<%= @event.id %>/delete" method="post">
-  <button type="submit" name="id" value="<%= @event.id %>">Delete event</button>
+<form class="col-form" action="/events/<%= @event.id %>/delete" method="post">
+  <button class="btn btn-del" type="submit" name="id" value="<%= @event.id %>">Delete Event</button>
 </form>
 
 <% unless Event.number_of_events_in_series(@event.name) == 1 %>
-<form action="/events/<%= @event.name %>/delete-all" method="post">
-  <button type="submit" name="id" value="<%= @event.id %>">Delete all events in series</button>
-<% end %>
+<form class="col-form" action="/events/<%= @event.name %>/delete-all" method="post">
+  <button class="btn btn-del" type="submit" name="id" value="<%= @event.id %>">
+    Delete All Events in Series
+  </button>
 </form>
+<% end %>
+
+</div>
