@@ -1,12 +1,7 @@
 <h2>Events</h2>
+<a href="/events/new">Add event</a>
 <hr>
 
-
-<div class="add-item">
-  <h3><a href="/events/new">Add event <span class="plus">+</span></a></h3>
-</div>
-
-<p>Upcoming Events</p>
-  <% @events.each do |e| %>
-      <a href="/events/<%= e.id %>"><%= e.name %></a>
-  <% end %>
+<% @events.each do |e| %>
+    <a href="/events/<%= e.id %>"><%= e.name %></a>
+<% end %>

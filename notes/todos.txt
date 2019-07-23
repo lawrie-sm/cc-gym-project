@@ -1,5 +1,5 @@
-- Add a calender view with upcoming events
-- Replace edit with cogwheel
+- Group events by view, do some research
+- Replace edit with cogwheel?
 - add pics/logos for events/locaitons/members/membership tiers/users
 - Use CSS text-transform to capitalise words
 - Dynamically update the navbar based on location

@@ -43,6 +43,10 @@ a {
   color: #0fa3b1;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 hr {
   color: #BBC5AA;
   margin: 15px auto;
@@ -59,6 +63,8 @@ nav ul {
   justify-content: center;
   list-style-type: none;
   background-color: #0fa3b1;
+  background: rgb(15,163,177);
+  background: linear-gradient(90deg, rgba(15,163,177,1) 0%, rgba(181,226,250,1) 75%, rgba(181,226,250,1) 100%);
 }
 
 nav li {
@@ -83,33 +89,20 @@ main {
   margin: 50px auto;
 }
 
-.add-item {
+.flex-container {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  height: 100px;
-  width: 75%;
-  padding: 5%;
-  margin: 10px auto;
-  color: #f9f7f3;
-  background: rgb(15,163,177);
-  background: linear-gradient(90deg, rgba(15,163,177,1) 0%, rgba(181,226,250,1) 75%, rgba(181,226,250,1) 100%);
-  -webkit-box-shadow: 7px 7px 13px -4px rgba(179,179,179,1);
-  -moz-box-shadow: 7px 7px 13px -4px rgba(179,179,179,1);
-  box-shadow: 7px 7px 13px -4px rgba(179,179,179,1);
 }
 
-.add-item > h3 {
-  text-align: center;
+.item {
+  width: 80%;
+  padding: 10px;
   color: #f9f7f3;
+  background-color: #0fa3b1;
+  margin: 15px auto;
+  border-style: solid;
 }
 
-.add-item > h3 > a {
-  color: #f9f7f3;
-}
-
-.plus {
-  font-size: 150%;
+.item a {
   color: #f9f7f3;
 }
