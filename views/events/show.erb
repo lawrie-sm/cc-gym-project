@@ -46,7 +46,7 @@
         <option value="<%= m.id %>"><%= m.print_name %></option>
       <% end %>
     </select>
-    <button type="submit">Add</button>
+    <button class="btn" type="submit">Add</button>
   </form>
 <% end %>
 
@@ -62,7 +62,7 @@
       <a href="/members/<%= m.id %>"><%= m.print_name %></a> - <%= m.membership.capitalize %>
 
       <form class="inline" action="/events/<%= @event.id %>/remove-member" method="post">
-        <button class="link-button" type="submit" name="member_id" value="<%= m.id %>">[-]</button>
+        <button class="btn-inline" type="submit" name="member_id" value="<%= m.id %>">[-]</button>
       </form>
 
     </li>

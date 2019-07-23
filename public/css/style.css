@@ -131,7 +131,7 @@ form.inline {
   display: inline;
 }
 
-button {
+.btn {
   height: 50px;
   margin: 0px 10px;
   padding: 5px 25px;
@@ -143,25 +143,19 @@ button {
   border: 2px solid #0fa3b1;
 }
 
-button:hover {
+.btn:hover {
   border: 2px solid #0fa3b1;
   background-color: #f9f7f3;
   color: #0fa3b1;
 }
 
-.link-button {
-  outline: 0;
-  border: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
+.btn-inline {
   color: #0fa3b1;
   background-color: inherit;
 }
 
-.link-button:hover {
-  border: 0;
-  background-color: inherit;
+button.btn-inline:hover  {
+  cursor: pointer;
   text-decoration: underline;
 }
 
