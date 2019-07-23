@@ -70,7 +70,9 @@
       <a href="/members/<%= m.id %>"><%= m.print_name %></a> - <%= m.membership.capitalize %>
 
       <form class="inline" action="/events/<%= @event.id %>/remove-member" method="post">
-        <button class="btn-inline" type="submit" name="member_id" value="<%= m.id %>">[-]</button>
+        <button type="submit" name="member_id" value="<%= m.id %>">
+          <i class="material-icons inline-icon">remove_circle_outline</i>
+        </button>
       </form>
 
     </li>
