@@ -15,4 +15,8 @@ class TestLocation < MiniTest::Test
     assert_equal(@location.name, 'test room')
     assert_equal(@location.capacity, 10)
   end
+
+  def test_location_print_name
+    assert_equal(@location.print_name, 'Test Room')
+  end
 end

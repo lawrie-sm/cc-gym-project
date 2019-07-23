@@ -9,7 +9,9 @@ class Location
   end
 
   def print_name
-    # TODO
+    name_words = @name.split(' ')
+    name_words = name_words.map { |w| w.capitalize }
+    return name_words.join(' ')
   end
 
   def events
