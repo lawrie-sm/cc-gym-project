@@ -124,7 +124,6 @@ main {
 form {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   margin: 20px 0;
 }
 
@@ -135,16 +134,35 @@ form.inline {
 button {
   height: 50px;
   margin: 0px 10px;
-  padding: 5px 15px;
+  padding: 5px 25px;
   color: #f9f7f3;
   background-color: #0fa3b1;
   cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  border: 2px solid #0fa3b1;
 }
 
-form.inline > button {
+button:hover {
+  border: 2px solid #0fa3b1;
+  background-color: #f9f7f3;
+  color: #0fa3b1;
+}
+
+.link-button {
+  outline: 0;
+  border: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
   color: #0fa3b1;
   background-color: inherit;
-  outline: 0;
+}
+
+.link-button:hover {
+  border: 0;
+  background-color: inherit;
+  text-decoration: underline;
 }
 
 select {
@@ -164,4 +182,8 @@ select {
 
 .cap {
   text-transform: capitalize;
+}
+
+.no-left-m {
+  margin-left: 0;
 }
