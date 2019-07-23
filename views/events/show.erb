@@ -41,7 +41,7 @@
 
 <h4>Add Members</h4>
   <form class="row-form" action="/events/<%= @event.id %>/add-member" method="post">
-    <select class="no-left-m" id="members" name="member_id">
+    <select class="large no-left-m" id="members" name="member_id">
       <% @event.addable_members.each do |m| %>
         <option value="<%= m.id %>"><%= m.print_name %></option>
       <% end %>

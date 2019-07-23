@@ -1,21 +1,24 @@
 <h2>Edit <%= @member.print_name %></h2>
 
-<form action="/members/<%= @member.id %>" method="post">
-  <label for="first-name">First name</label>
-  <input id="first-name" type="text" name="first_name" value="<%= @member.first_name %>" required>
+<div class="col">
+  <form class="col-form" action="/members/<%= @member.id %>" method="post">
+    <label for="first-name">First name</label>
+    <input id="first-name" type="text" name="first_name" value="<%= @member.first_name %>" required>
 
-  <label for="last-name">Last name</label>
-  <input id="last-name "type="text" name="last_name" value="<%= @member.last_name %>" required>
+    <label for="last-name">Last name</label>
+    <input id="last-name "type="text" name="last_name" value="<%= @member.last_name %>" required>
 
-  <label for="membership">Membership</label>
-  <select id="membership" name="membership" required>
-    <option <%= @member.membership == "basic" ? "selected" : "" %> value="basic">Basic</option>
-    <option <%= @member.membership == "premium" ? "selected" : "" %> value="premium">Premium</option>
-  </select>
+    <label for="membership">Membership</label>
+    <select id="membership" name="membership" required>
+      <option <%= @member.membership == "basic" ? "selected" : "" %> value="basic">Basic</option>
+      <option <%= @member.membership == "premium" ? "selected" : "" %> value="premium">Premium</option>
+    </select>
 
-  <button type="submit">Update Member</button>
-</form>
+    <button class="btn top-m" type="submit">Update Member</button>
+  </form>
 
-<form action="/members/<%= @member.id %>/delete" method="post">
-  <button type="submit" name="id" value="<%= @member.id %>">Delete member</button>
-</form>
+  <form class="col-form" action="/members/<%= @member.id %>/delete" method="post">
+    <button class="btn btn-del" type="submit" name="id" value="<%= @member.id %>">Delete member</button>
+  </form>
+
+</div>
