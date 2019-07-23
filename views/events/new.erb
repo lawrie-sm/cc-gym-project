@@ -25,9 +25,9 @@
   <label for="start-time">Time</label>
   <div class="form-row">
     <input id="start-time" type="datetime-local" name="start_time" value="<%= Time.now.xmlschema[0...-9] %>" required>
-    <label for="hours">h:</label>
+    <label for="hours">Hours</label>
     <input id="hours" type="number" name="hours" min="0" max="12" value="1" required>
-    <label for="mins">m:</label>
+    <label for="mins">Mins</label>
     <input id="mins" type="number" name="mins" min="0" max="59" value="0" required>
   </div>
 

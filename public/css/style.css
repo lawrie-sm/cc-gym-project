@@ -88,7 +88,6 @@ main {
   margin: 50px auto;
 }
 
-
 .item-container {
   display: flex;
   flex-direction: column;
@@ -154,7 +153,7 @@ label {
   margin-bottom: 0;
 }
 
-input {
+input, textarea {
   height: 40px;
   margin: 10px 10px;
   margin-top: 0;
@@ -164,10 +163,17 @@ input {
 
 textarea {
   height: 100px;
-  margin: 10px 10px;
-  padding: 5px 10px;
-  border: 1px solid #BBC5AA;
 }
+
+select {
+  height: 50px;
+  margin: 0px 10px;
+  -webkit-border-radius: 0;
+  border: 0;
+  outline: 1px solid #BBC5AA;
+  outline-offset: -1px;
+}
+
 
 .btn {
   height: 50px;
@@ -195,15 +201,6 @@ textarea {
 button.btn-inline:hover  {
   cursor: pointer;
   text-decoration: underline;
-}
-
-select {
-  height: 50px;
-  margin: 0px 10px;
-  -webkit-border-radius: 0;
-  border: 0;
-  outline: 1px solid #BBC5AA;
-  outline-offset: -1px;
 }
 
 /* Helper classes */
