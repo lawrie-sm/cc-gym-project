@@ -153,6 +153,12 @@ input, textarea {
   border: 1px solid #BBC5AA;
 }
 
+input.tiny {
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 50px;
+}
+
 input.small {
   width: 100px;
 }

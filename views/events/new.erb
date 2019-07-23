@@ -16,17 +16,22 @@
   </select>
 
 
-  <label for="start-time">Time</label>
+  <label for="start-time">Time <span class="greyed">(Peak Times: 12:00-14:00 & 17:00-19:00)</span></label>
   <div class="row no-top-m">
-    <input id="start-time" type="datetime-local" name="start_time" value="<%= Time.now.xmlschema[0...-9] %>" required>
+    <input class="large" id="start-time" type="datetime-local" name="start_time" value="<%= Time.now.xmlschema[0...-9] %>" required>
     <label for="hours">Hours</label>
-    <input id="hours" type="number" name="hours" min="0" max="12" value="1" required>
+    <input class="tiny" id="hours" type="number" name="hours" min="0" max="12" value="1" required>
     <label for="mins">Mins</label>
-    <input id="mins" type="number" name="mins" min="0" max="59" value="0" required>
+    <input class="tiny" id="mins" type="number" name="mins" min="0" max="59" value="0" required>
   </div>
 
-  <label>Recurrence</label>
+  <div class="row">
+
+  </div>
+
+
   <div class="row no-top-m">
+    <label>Recurrence:</label>
     <label for="one-time">One-time</label>
     <input id="one-time" type="radio" name="recurrence" value="one-time" checked>
     <label for="weekly">Weekly</label>
