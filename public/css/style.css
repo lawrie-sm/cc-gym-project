@@ -110,6 +110,10 @@ main {
   flex-direction: row-reverse;
 }
 
+.grow {
+  flex-grow: 2;
+}
+
 .item {
   display: flex;
   flex-direction: column;
