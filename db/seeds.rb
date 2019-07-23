@@ -34,7 +34,7 @@ spin_room.save
 
 spin_class = Event.new(
   'name' => 'spin class',
-  'description' => 'cardio',
+  'description' => 'Intense cardio.',
   'start_time' => Time.new(2019, 7, 30, 12, 30),
   'end_time' => Time.new(2019, 7, 30, 13, 30),
   'location_id' => spin_room.id
@@ -43,7 +43,7 @@ spin_class.save
 
 yoga_class = Event.new(
   'name' => 'yoga class',
-  'description' => 'chakras',
+  'description' => 'Align your chakras.',
   'start_time' => Time.new(2019, 7, 30, 12, 45),
   'end_time' => Time.new(2019, 7, 30, 13, 45),
   'location_id' => room_a.id
@@ -52,7 +52,7 @@ yoga_class.save
 
 lifting_class = Event.new(
   'name' => 'weightlifting class',
-  'description' => 'strength',
+  'description' => 'Hefty strength workout.',
   'start_time' => Time.new(2019, 7, 31, 9, 0),
   'end_time' => Time.new(2019, 7, 31, 10, 0),
   'location_id' => weights_room.id

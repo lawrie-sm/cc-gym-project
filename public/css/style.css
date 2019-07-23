@@ -17,12 +17,11 @@
 /* Base styles */
 
 html {
-  background-color: #f9f7f3;
+  background-color: #ffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
-  color: #0fa3b1;
 }
 
 h1 {
@@ -87,4 +86,38 @@ nav .active {
 main {
   width: 500px;
   margin: 50px auto;
+}
+
+.formal-name {
+  text-transform: capitalize;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 10px 5px;
+  border: 1px solid #BBC5AA;
+}
+
+.item-row {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.greyed {
+  color: #BBC5AA;
+}
+
+.reversed-row {
+  flex-direction: row-reverse;
 }
