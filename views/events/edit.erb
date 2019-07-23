@@ -19,17 +19,15 @@
     <% end %>
   </select>
 
-<div class="row">
-  <label for="start-time">Time</label>
-  <input id="start-time" type="datetime-local" name="start_time" value="<%= @event.print_time_web_format %>" required>
-  <label for="hours">h:</label>
-  <input id="hours" type="number" name="hours" min="0" max="12" value="<%= @event.duration[:hours] %>" required>
-  <label for="mins">m:</label>
-  <input id="mins" type="number" name="mins" min="0" max="59" value="<%= @event.duration[:mins] %>" required>
-</div>
-
+  <div class="row">
+    <label for="start-time">Time</label>
+    <input id="start-time" type="datetime-local" name="start_time" value="<%= @event.print_time_web_format %>" required>
+    <label for="hours">h:</label>
+    <input id="hours" type="number" name="hours" min="0" max="12" value="<%= @event.duration[:hours] %>" required>
+    <label for="mins">m:</label>
+    <input id="mins" type="number" name="mins" min="0" max="59" value="<%= @event.duration[:mins] %>" required>
+  </div>
   <button class="btn" type="submit">Update Event</button>
-
 </form>
 
 <form class="col-form" action="/events/<%= @event.id %>/delete" method="post">
@@ -37,11 +35,13 @@
 </form>
 
 <% unless Event.number_of_events_in_series(@event.name) == 1 %>
+
 <form class="col-form" action="/events/<%= @event.name %>/delete-all" method="post">
   <button class="btn btn-del" type="submit" name="id" value="<%= @event.id %>">
     Delete All in Series
   </button>
 </form>
+
 <% end %>
 
 </div>

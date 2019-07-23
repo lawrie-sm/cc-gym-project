@@ -114,6 +114,10 @@ main {
   flex-grow: 2;
 }
 
+.align-end {
+  align-items: flex-end;
+}
+
 .item {
   display: flex;
   flex-direction: column;
@@ -257,4 +261,20 @@ button.btn-del:hover {
 
 .bottom-m {
   margin-bottom: 20px;
+}
+
+.left-m {
+  margin-left: 10px;
+}
+
+/* Icons */
+
+.material-icons {
+  color: #0fa3b1;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+.material-icons:hover {
+  color: #BBC5AA;
 }
