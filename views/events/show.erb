@@ -6,7 +6,7 @@
   <strong>Location:</strong>
   <span class="cap">
     <a href="/locations/<%= @event.location_id %>">
-      <%= @event.location.name %>
+      <%= @event.location.print_name %>
     </a>
   </span>
 </p>
@@ -34,7 +34,7 @@
   <p>
     <em class="greyed">
       <%= @event.peak? ? "<p>This is a peak event. Only premium members can be added.</p>" : "" %>
-      <span class="greyed cap"><%= @event.location.name %></span> has <%= @event.location.capacity - @event.members.count%> spot(s) left.
+      <span class="greyed cap"><%= @event.location.print_name %></span> has <%= @event.location.capacity - @event.members.count%> spot(s) left.
     </em>
   </p>
 <hr>

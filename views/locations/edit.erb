@@ -2,7 +2,7 @@
 
 <form action="/locations/<%= @location.id %>" method="post">
   <label for="name">Name</label>
-  <input id="name" type="text" name="name" value="<%= @location.name %>" required>
+  <input id="name" type="text" name="name" value="<%= @location.print_name %>" required>
 
   <label for="capacity">Capacity</label>
   <input id="capacity" type="text" name="capacity" value="<%= @location.capacity %>" required>

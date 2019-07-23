@@ -4,6 +4,6 @@
 
 <ul class="item-list">
   <% @locations.each do |l| %>
-    <li> <a href="/locations/<%= l.id %>"><%= l.name %></a> - <%= l.capacity %> spots</li>
+    <li> <a href="/locations/<%= l.id %>"><%= l.print_name %></a> - <%= l.capacity %> spots</li>
   <% end %>
 </ul>
