@@ -1,33 +1,50 @@
-<h2>Add a new event</h2>
+<h2>New event</h2>
 
-<form action="/events" method="post">
-  <label for="name">Name</label>
-  <input id="Name" type="text" name="name" required>
+<form class="col-form" action="/events" method="post">
+
+<div class="form-col">
+    <label for="name">Name</label>
+    <input id="Name" type="text" name="name" required>
+
 
   <label for="description">Description</label>
-  <textarea id="description" name="description" rows="4" cols="40" required></textarea>
+  <textarea id="description" name="description"
+    placeholder="Enter a short description of the event." required>
+  </textarea>
+
+
 
   <label for="location">Location</label>
-  <select id="location" name="location_id" required>
+  <select id="location" name="location_id" placeholder="location" required>
     <% @locations.each do |l| %>
-       <option value="<%= l.id %>"> <%= l.name %> - <%= l.capacity %> </option>
+       <option value="<%= l.id %>"> <%= l.name.capitalize %> - <%= l.capacity %> </option>
     <% end %>
   </select>
 
+
   <label for="start-time">Time</label>
-  <input id="start-time" type="datetime-local" name="start_time" value="<%= Time.now.xmlschema[0...-9] %>" required>
-  <label for="hours">h:</label>
-  <input id="hours" type="number" name="hours" min="0" max="12" value="1" required>
-  <label for="mins">m:</label>
-  <input id="mins" type="number" name="mins" min="0" max="59" value="0" required>
+  <div class="form-row">
+    <input id="start-time" type="datetime-local" name="start_time" value="<%= Time.now.xmlschema[0...-9] %>" required>
+    <label for="hours">h:</label>
+    <input id="hours" type="number" name="hours" min="0" max="12" value="1" required>
+    <label for="mins">m:</label>
+    <input id="mins" type="number" name="mins" min="0" max="59" value="0" required>
+  </div>
 
-  <p>Recurrence</p>
-  <label for="one-time">One-time</label>
-  <input id="one-time" type="radio" name="recurrence" value="one-time" checked>
-  <label for="weekly">Weekly</label>
-  <input id="weekly" type="radio" name="recurrence" value="weekly">
-  <label for="monthly">Monthly</label>
-  <input id="monthly" type="radio" name="recurrence" value="monthly">
 
-  <button type="submit">Create Event</button>
+
+
+  <label>Recurrence</label>
+  <div class="form-row">
+    <label for="one-time">One-time</label>
+    <input id="one-time" type="radio" name="recurrence" value="one-time" checked>
+    <label for="weekly">Weekly</label>
+    <input id="weekly" type="radio" name="recurrence" value="weekly">
+    <label for="monthly">Monthly</label>
+    <input id="monthly" type="radio" name="recurrence" value="monthly">
+  </div>
+</div>
+
+
+  <button class="btn" type="submit">Create Event</button>
 </form>

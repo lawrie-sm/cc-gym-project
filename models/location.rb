@@ -8,6 +8,10 @@ class Location
     @capacity = options['capacity'].to_i
   end
 
+  def print_name
+    # TODO
+  end
+
   def events
     sql = '
       SELECT e.* from events e
