@@ -5,11 +5,11 @@
     <div class="row spaced-row">
       <div class="col">
         <label for="name">Name</label>
-        <input class="large" id="name" type="text" name="name" value="<%= @location.print_name %>" required>
+        <input id="name" type="text" name="name" value="<%= @location.print_name %>" required>
       </div>
       <div class="col">
         <label for="capacity">Capacity</label>
-        <input class="small" id="capacity" type="text" name="capacity" value="<%= @location.capacity %>" required>
+        <input id="capacity" type="text" name="capacity" value="<%= @location.capacity %>" required>
       </div>
     </div>
       <button class="btn" type="submit">Update Location</button>
