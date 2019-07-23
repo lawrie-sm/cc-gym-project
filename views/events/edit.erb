@@ -39,7 +39,7 @@
 <% unless Event.number_of_events_in_series(@event.name) == 1 %>
 <form class="col-form" action="/events/<%= @event.name %>/delete-all" method="post">
   <button class="btn btn-del" type="submit" name="id" value="<%= @event.id %>">
-    Delete All Events in Series
+    Delete All in Series
   </button>
 </form>
 <% end %>

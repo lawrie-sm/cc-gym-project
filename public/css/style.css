@@ -110,10 +110,6 @@ main {
   flex-direction: row-reverse;
 }
 
-.full-width {
-  width: 100%;
-}
-
 .item {
   display: flex;
   flex-direction: column;
@@ -155,6 +151,14 @@ input, textarea {
   margin-top: 0;
   padding: 5px 10px;
   border: 1px solid #BBC5AA;
+}
+
+input.small {
+  width: 100px;
+}
+
+input.large {
+  width: 250px;
 }
 
 textarea {

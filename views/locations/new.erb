@@ -1,11 +1,15 @@
 <h2>Add a new location</h2>
 
-<form action="/locations" method="post">
-  <label for="name">Name</label>
-  <input id="name" type="text" name="name" required>
-
-  <label for="capacity">Capacity</label>
-  <input id="capacity" type="text" name="capacity" required>
-
-  <button type="submit">Create Location</button>
+<form class="col-form" action="/locations" method="post">
+  <div class="row spaced-row">
+    <div class="col">
+      <label for="name">Name</label>
+      <input class="large" id="name" type="text" name="name" required>
+    </div>
+    <div class="col">
+      <label for="capacity">Capacity</label>
+      <input class="small" id="capacity" type="number" name="capacity" min="0" required>
+    </div>
+  </div>
+  <button class="btn" type="submit">Create Location</button>
 </form>

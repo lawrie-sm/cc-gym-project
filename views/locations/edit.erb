@@ -1,15 +1,21 @@
 <h2>Edit location</h2>
 
-<form action="/locations/<%= @location.id %>" method="post">
-  <label for="name">Name</label>
-  <input id="name" type="text" name="name" value="<%= @location.print_name %>" required>
+<div class="col">
+  <form class="col-form" action="/locations/<%= @location.id %>" method="post">
+    <div class="row spaced-row">
+      <div class="col">
+        <label for="name">Name</label>
+        <input class="large" id="name" type="text" name="name" value="<%= @location.print_name %>" required>
+      </div>
+      <div class="col">
+        <label for="capacity">Capacity</label>
+        <input class="small" id="capacity" type="text" name="capacity" value="<%= @location.capacity %>" required>
+      </div>
+    </div>
+      <button class="btn" type="submit">Update Location</button>
+  </form>
 
-  <label for="capacity">Capacity</label>
-  <input id="capacity" type="text" name="capacity" value="<%= @location.capacity %>" required>
-
-  <button type="submit">Update Location</button>
-</form>
-
-<form action="/locations/<%= @location.id %>/delete" method="post">
-  <button type="submit" name="id" value="<%= @location.id %>">Delete</button>
-</form>
+  <form class="col-form" action="/locations/<%= @location.id %>/delete" method="post">
+    <button class="btn btn-del" type="submit" name="id" value="<%= @location.id %>">Delete</button>
+  </form>
+</div>
