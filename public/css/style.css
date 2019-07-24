@@ -113,6 +113,10 @@ main {
   border: 1px solid #BBC5AA;
 }
 
+.item-list {
+  margin-top: 10px;
+}
+
 .item-list > li {
   line-height: 2em;
 }

@@ -43,9 +43,9 @@
 
   <form class="col-form  bottom-m" action="/events/<%= @event.id %>/add-member" method="post">
     <div class="row no-top-m">
-      <label class="no-vert-m" for="members"><strong>Add Members</strong></label>
+      <label class="no-vert-m" for="members">Add Members</label>
     </div>
-    <div class="row">
+    <div class="row no-top-m">
       <select class="grow" id="members" name="member_id">
         <% @event.addable_members.each do |m| %>
         <option value="<%= m.id %>"><%= m.print_name %></option>
@@ -59,7 +59,7 @@
 
 
 <% unless  @event.members.count.zero? %>
-<hr>
+
 <h4>Member List</h4>
 
 <ul class="item-list">
