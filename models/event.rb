@@ -10,7 +10,7 @@ class Event
     @id = options['id'].to_i if options['id']
     @name = options['name'].downcase
     @description = options['description']
-    @location_id = options['location_id']
+    @location_id = options['location_id'].to_i
 
     @start_time = options['start_time']
     @start_time = Time.parse(@start_time) if @start_time.is_a?(String)

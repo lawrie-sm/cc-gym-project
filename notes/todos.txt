@@ -1,2 +1,0 @@
-- Settings cog and plus add instead of text
-- add pics/logos for events/locaitons/members/membership tiers/users

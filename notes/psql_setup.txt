@@ -1,2 +1,0 @@
-- Change pg_hba.conf method to trust for local connections
-- Add user to roles in pg admin
