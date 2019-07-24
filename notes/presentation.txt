@@ -1,26 +1,65 @@
-- setting up a new dev machine, psql issues, cmder
+OBSTACLES
 
-- Dealing with time between Ruby, PSQL and HTML had some issues. No need to do lots of string parsing
-but needed to require 'time' in the model and parse it when coming back from DB as a string.
-In order to set the default time in the update function, needed to do some string mangling with xmlschme
-in html_time_string
-Some issues with adding things on regular dates,
-used the 'Date' object and converted back to time
+- Time
 
-- picked a simpler structer, harcoded membership tiers
+Some issues dealing with times in Ruby.
+Ruby has a base "Time" class as well as others for Dates.
+Some methods require the use of the time module.
 
-- making lots of events is slow, would need to compose
-sql queries if its meant to be faster
+Creating Times is easy. Adding them to the DB also works
+seamlessly through the psql gem.
 
-- Not really possible to dynamically create forms without JS
+However, creating new Event objects required parsing the times,
+as they will return from the DB as strings. The browser's input
+form will also return a string. This is still fairly straightforward.
 
-- testing functions that rely on other DB functions
+Main issue was getting times to display to the user. Required use of string
+printing functions.
 
-- using ".reject" instead of ".map", to
-create the event show dropdown of absent members
+In particular, the browser expects times to be formatted in a particular way
+in order to populate the default values for an input. This was necessary in
+order to use Time.now to get the current time, and then use this to populate
+the new event form with today's date, rather than having it completely blank.
+Also necessary when inserting default values for updates
 
-- using the request object in sinatra to render
-the nav bar dynamically with underlines for current
-location
+Finally, I had to use Ruby's "Date" object, which can be converted to and from
+a time, to make recurring events. Date has methods which allow you to add
+months.
 
-- styling get and post buttons in the same way
+SPEED
+
+I added recurring events. These work fairly well but accessing the entire list
+is slow. Should probably limit the number of queries when going to the events 
+page, by adding pagination and making the batch job more efficient.
+
+
+FORMS
+
+Not easy to dynmically create forms without JS. I initially wanted to make it
+possible to add multiple time slots for an event, but didn't have time to
+figure it out without JS.
+
+
+MAP, REJECT, SELECT
+
+I wanted to create the members dropdown list, seen in the event page,
+dynamically. This meant getting all members who were eligble (premium for peak
+members) and ignoring those who were already attending or not eligible.
+Initially tried using map, but reject worked much better. You can also use
+select to do the opposite.
+
+
+STYLING THE NAVBAR
+
+Most of the styling is straightforward. One of the interesting things is the
+nav bar changes dynamically (adding an underline) based on where you are in the
+site. To do this I had to use sinatra's request object, which returns the path
+to the current page.
+
+STYLING LINKS AND BUTTONS
+
+I wanted all the links and buttons to have a consistent style. Some links send
+GET requests ('a') while others send POST requests ('button'). I used icons and
+buttons to ensure consistency, but there are some 'buttons' (e.g remove member)
+that just use an icon.
+
