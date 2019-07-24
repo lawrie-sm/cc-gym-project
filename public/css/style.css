@@ -250,6 +250,7 @@ button.btn-del:hover {
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
   position: relative;
+  top: 1px;
   left: -10px;
   margin-left: -25px
 }
