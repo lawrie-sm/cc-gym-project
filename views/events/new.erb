@@ -11,7 +11,7 @@
   <label for="location">Location</label>
   <select id="location" name="location_id" placeholder="location" required>
     <% @locations.each do |l| %>
-       <option value="<%= l.id %>"> <%= l.print_name %> - <%= l.capacity %> </option>
+       <option value="<%= l.id %>"> <%= l.print_name %></option>
     <% end %>
   </select>
 

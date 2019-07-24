@@ -14,7 +14,7 @@
   <select id="location" name="location_id" required>
     <% @locations.each do |l| %>
       <option <%= l.id == @event.location.id ? "selected" : "" %> value="<%= l.id %>">
-        <%= l.print_name %> - <%= l.capacity %>
+        <%= l.print_name %>
       </option>
     <% end %>
   </select>

@@ -16,6 +16,12 @@ room_a = Location.new(
 )
 room_a.save
 
+room_b = Location.new(
+  'name' => 'room b',
+  'capacity' => 5
+)
+room_b.save
+
 weights_room = Location.new(
   'name' => 'weights room',
   'capacity' => 3
@@ -59,6 +65,15 @@ lifting_class = Event.new(
 )
 lifting_class.save
 
+pilates_class = Event.new(
+  'name' => 'pilates class',
+  'description' => 'Something about core strength?',
+  'start_time' => Time.new(2019, 8, 1, 15, 0),
+  'end_time' => Time.new(2019, 8, 1, 16, 0),
+  'location_id' => room_b.id
+)
+pilates_class.save
+
 #
 # Seed members
 #
@@ -72,7 +87,7 @@ arnold.save
 conor = Member.new(
   'first_name' => 'conor',
   'last_name' => 'mcgregor',
-  'membership' => 'basic'
+  'membership' => 'premium'
 )
 conor.save
 silvio = Member.new(
@@ -102,3 +117,5 @@ spin_class.add_member(anne)
 spin_class.add_member(silvio)
 lifting_class.add_member(arnold)
 lifting_class.add_member(conor)
+pilates_class.add_member(anne)
+pilates_class.add_member(donald)
